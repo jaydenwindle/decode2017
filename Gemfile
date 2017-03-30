@@ -6,9 +6,11 @@ git_source(:github) do |repo_name|
 end
 
 # App specific gems
+gem 'shopify_api'
 gem 'shopify_app'
 gem 'activeresource', github: 'rails/activeresource' # needed for rails 5.0
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'httparty'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'

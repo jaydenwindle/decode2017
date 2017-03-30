@@ -76,6 +76,8 @@ GEM
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     hashie (3.5.5)
+    httparty (0.14.0)
+      multi_xml (>= 0.5.2)
     i18n (0.8.1)
     jbuilder (2.6.3)
       activesupport (>= 3.0.0, < 5.2)
@@ -204,12 +206,14 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
   dotenv-rails
+  httparty
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
   puma (~> 3.0)
   rails (~> 5.0.2)
   sass-rails (~> 5.0)
+  shopify_api
   shopify_app
   spring
   spring-watcher-listen (~> 2.0.0)
