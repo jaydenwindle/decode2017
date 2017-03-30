@@ -9,7 +9,7 @@ apt-get install ruby2.3 ruby2.3-dev sqlite3 nodejs
 gem install rails bundler
 
 # clone & setup gems
-git clone git@github.com:jaydenwindle/decode2017.git && cd decode2017
+git clone https://github.com/jaydenwindle/decode2017.git && cd decode2017
 bundle install
 
 # You're golden!
