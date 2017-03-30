@@ -7,7 +7,8 @@ end
 
 # App specific gems
 gem 'shopify_app'
-gem 'activeresource', github: 'rails/activeresource'
+gem 'activeresource', github: 'rails/activeresource' # needed for rails 5.0
+gem 'dotenv-rails', groups: [:development, :test]
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'
