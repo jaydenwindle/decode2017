@@ -12,6 +12,9 @@ gem install rails bundler
 git clone https://github.com/jaydenwindle/decode2017.git && cd decode2017
 bundle install
 
+# Migrate the db
+rake db:migrate
+
 # You're golden!
 bin/rails server
 ```
