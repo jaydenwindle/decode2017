@@ -1,7 +1,6 @@
 class GiveawaysController < ApplicationController
     def new
       products = ShopifyAPI::Product.find(:all, params: { limit: 250 })
-      p products
     end
     
     def edit
@@ -17,5 +16,7 @@ class GiveawaysController < ApplicationController
     end
 
     def create
+      storeID = ShopifyAPI::Shop.current.id
+      giveProducts =  
     end
 end
