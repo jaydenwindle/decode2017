@@ -11,8 +11,9 @@
 
 <div class="centerify">
   <div>
-    <% if not defined?(@giveaways) %>
     <div class="container">
+
+    <% if @giveaways == nil %>
       <div class="row mb-5">
         <div class="col-12 text-center">
           <h1>Welcome to the Giveaways!</h1>
@@ -35,6 +36,8 @@
         </div>
       -->
       <!-- ng-if: end -->
+
+      <% else %>
 
       <!-- ng-if: giveaways.length > 0 -->
       <div class="row">
