@@ -1,9 +1,9 @@
 class CreateGiveaways < ActiveRecord::Migration[5.0]
   def change
     create_table :giveaways do |t|
-      t.Integer :store
-      t.Text :users
-      t.Text :products
+      t.integer :store
+      t.text :users
+      t.text :products
 
       t.timestamps
     end
