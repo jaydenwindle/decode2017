@@ -1,18 +1,15 @@
 class UsersController < ApplicationController
 
-	# Request to render the view
-	def new
-		
-	end
+    # Create the new user
+    # /users/create?email=myemail@dhyew.com&name=HeyThere
+    def create
+        user = User.find_by(params[:email])
+        if user.nil?
+            user = User.new(params)
+        end
+        if user.save
 
-	# Create the new user
-	def create
-		user = User.new(params)
-		if user.save
-			# 
-		else
-			# 
-		end
-	end
+        end
+    end
 
 end
