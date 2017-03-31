@@ -1,7 +1,11 @@
-class GiveawaysController < ApplicationController
+class GiveawaysController < ShopifyApp::AuthenticatedController
+    def index
+        store_id = ShopifyApi::Store.current.id
+        @giveaways = Giveaway.find_by(store: store_id)
+    end
+
     def new
-      products = ShopifyAPI::Product.find(:all, params: { limit: 250 })
-      p products
+        @giveaway = Giveaway.new
     end
     
     def edit
