@@ -3,7 +3,6 @@ Rails.application.routes.draw do
 
     root :to => 'home#index'
     mount ShopifyApp::Engine, at: '/'
-  
-    post '/users/create' => 'users#create'
 
+  	post '/users/create' => 'users#create'
 end
