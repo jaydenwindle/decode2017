@@ -1,3 +1,22 @@
-// Place all the styles related to the Giveaways controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.card.card-massive {
+  background-size: cover;
+  background-position: center center;
+  padding: 0;
+  color: #fff;
+}
+
+.card.card-massive .overlay {
+  background: rgba(0,0,0,.5);
+}
+
+.card.card-massive .list-group-flush .list-group-item {
+  background: none;
+}
+
+.card-outline-success {
+  background-color: #fff;
+}
+
+.ended {
+  opacity: .6;
+}
