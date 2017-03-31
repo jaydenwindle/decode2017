@@ -1,0 +1,13 @@
+language: ruby
+rvm:
+- 2.0.0
+- 1.9.3
+- jruby-19mode
+- rbx-2
+deploy:
+  provider: heroku
+  api_key:
+    secure: KOE7i0aMPD/rjWdyeXjY1GWwHllldTd4Lk9Pg2THbaiVAWt5fIBWYDik7zqHjKB2bTFOfZKw9hM+djXtxmSS58MAxruheqQEGhbj2TrZXR0+IJLGWKh/B7LjVPuM++UY5+U11OAiNTllugGUSGYkvTOA4FGxhPNvkIvzN7PIpXR0waVNiMlv75/NKvqFpJ272sQ2lw1S6efnfmFXf3ldE7AQNwMWpMQ82pUFDjUpqKVfY/23L5Abqcp+Era06OkKj7IHL1xDuBJXoClQFsqAkCfQR95Yi9Px2j68MKkSt7jnk1pnBOyH+2DGrOhrtgKkW5YPdNi9rifsQE2PyLke7u1ui7xa/hVMZVyULx2BJYDB7CvuZB5yvBxJLBk03tqqClDGuD9uZ2pkpZspErZ2io8Q4oK3yiPIAzB+iUHWPUUy9bs2RxF6JjWmndNVU4XQ3yooKEqETXm54XcPvF4HFkKQRRn53kEaq0ZD9lGMCisY7vnv62VljkEOOKroSwZmUhFOZ7YTHJGBgcrPZUTNkAx8IbkxRplg4LiwV8s7vpRp/Y+BCNFenirtIIQ1nECJbvuWawAufZOQM0ibkx6poopUpsEz3DEEdZv5f1bicNbxHGmY2HCElMBhTPW8cRDA4p9ylg+BGXkuGKCZkiC6Waf70O25ruVp53ldPj8Xd6Y=
+  app: decode-shopify2017
+  on:
+    repo: jaydenwindle/decode2017
