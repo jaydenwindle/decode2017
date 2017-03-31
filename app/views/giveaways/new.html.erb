@@ -1,1 +1,16 @@
+<% content_for :javascript do %>
+    <script text="text/javascript">
+        ShopifyApp.ready(function() {
+            ShopifyApp.Bar.initialize({
+                title: "New Giveaway",
+                icon: "<%= asset_path('favicon.ico') %>"
+            });
+        });
+    </script>
+<% end %>
+
 <h1>New Giveaway</h1>
+
+<%= form_for :giveaway, url: giveaways_path do |f| %>
+
+<% end %>
