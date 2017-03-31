@@ -1,4 +1,4 @@
-# DECODE 2017 - Team Shopify
+# DECODE 2017 - Team Shopify [![Build Status](https://travis-ci.org/jaydenwindle/decode2017.svg?branch=master)](https://travis-ci.org/jaydenwindle/decode2017)
 
 This is the repo for our awesome shopify giveaway app!
 
