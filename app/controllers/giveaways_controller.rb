@@ -7,7 +7,7 @@ class GiveawaysController < ShopifyApp::AuthenticatedController
     end
 
     def new
-        @giveaway = Giveaway.new
+      products = ShopifyAPI::Product.find(:all, params: { limit: 250 })
     end
     
     def edit
@@ -23,5 +23,7 @@ class GiveawaysController < ShopifyApp::AuthenticatedController
     end
 
     def create
+      storeID = ShopifyAPI::Shop.current.id
+      giveProducts =  
     end
 end
