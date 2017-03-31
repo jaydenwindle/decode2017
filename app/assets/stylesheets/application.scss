@@ -1,0 +1,40 @@
+@import 'bootstrap';
+
+html,
+body,
+.centerify {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #efefef;
+}
+
+.centerify {
+  display: table;
+}
+
+.centerify > div {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.container .row {
+  margin: 1rem auto;
+}
+
+h1 {
+  font-weight: 300;
+}
+
+h3,
+h4,
+.font-weight-bold {
+  font-weight: 400;
+}
+
+.super-bold {
+  font-weight: 500;
+}
