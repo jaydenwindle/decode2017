@@ -31,7 +31,7 @@
         <div class="col-12">
           <div class="row">
             <div class="col-12">
-              <% if @giveaways.length == 1 %>
+              <% if @giveaways.length > 1 %>
                 <h3>Current giveaway</h3>
               <% else %>
                 <h3>Most active giveaway</h3>
@@ -66,47 +66,7 @@
         </div>
       </div>
       <!-- "main" giveaway  -->
-      <% end %>
 
-
-      <% if @giveaways.length > 1 %>
-        <!-- Current: start -->
-        <div class="row">
-          <div class="col-12">
-            <div class="row">
-              <div class="col-12">
-                <h3>Other giveaways</h3>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-12">
-                <div>
-                  
-                  <% @giveaways.each { |giveaway| %>
-                    <div class="card mb-3">
-                      <div class="card-block">
-                        <h4 class="card-title pl-0 mb-0"><%= giveaway.name %></h4>
-                      </div>
-
-                      <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><span class="font-weight-bold">Start <span class="ml-1">⏰</span></span><span class="super-bold ml-auto"><%= @prettyStart[giveaway.id] %></span></li>
-                        <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">😊</span></span><span class="super-bold ml-auto"><%= @nApplicants[giveaway.id] %> people</span></li>
-                        <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">💰</span></span><span class="super-bold ml-auto"><%= @nPrizes[giveaway.id] %> prizes</span></li>
-                      </ul>
-
-                      <div class="card-block text-right">
-                        <a href="#" class="btn btn-sm btn-danger">End</a>
-                      </div>
-                    </div>
-                  <% } %>
-
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Current: end -->
       <% end %>
 
       <!-- Past: start -->
@@ -122,47 +82,19 @@
             <div class="col-12">
               <!-- start columns -->
               <div class="card-columns">
-                <!-- ng-repeat: giveaway in giveaways -->
+              <% @giveaways.select{|give| !give.isActive}.each do |gp| %>
                 <div class="card ended">
                   <div class="card-block">
-                    <h4 class="card-title pl-0 mb-0">Sample giveaway</h4>
+                    <h4 class="card-title pl-0 mb-0"><%= gp.name %></h4>
                   </div>
 
                   <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><span class="font-weight-bold"><span class="mr-1">⏰</span> ran</span><span class="super-bold ml-auto">23 days</span></li>
-                    <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">😊</span></span><span class="super-bold ml-auto">1000 ppl.</span></li>
-                    <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">💰</span></span><span class="super-bold ml-auto">10 prizes</span></li>
+                    <%#<li class="list-group-item"><span class="font-weight-bold"><span class="mr-1">⏰</span> ran</span><span class="super-bold ml-auto">23 days</span></li>%>
+                    <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">😊</span></span><span class="super-bold ml-auto"><%= g.p.users.length %> ppl.</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">💰</span></span><span class="super-bold ml-auto"><%= g.p.products.map(&:quantity).sum %> prizes</span></li>
                   </ul>
                 </div>
-                <!-- ng-repeat: end -->
-
-                <div class="card ended">
-                  <div class="card-block">
-                    <h4 class="card-title pl-0 mb-0">Sample giveaway</h4>
-                  </div>
-
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><span class="font-weight-bold"><span class="mr-1">⏰</span> ran</span><span class="super-bold ml-auto">23 days</span></li>
-                    <li class="list-group-item"><span class="font-weight-bold"><span class="mr-1">⏰</span> planned</span><span class="super-bold ml-auto">23 days</span></li>
-                    <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">😊</span></span><span class="super-bold ml-auto">1000 ppl.</span></li>
-                    <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">💰</span></span><span class="super-bold ml-auto">10 prizes</span></li>
-                  </ul>
-                </div>
-                
-                <div class="card ended">
-                  <div class="card-block">
-                    <h4 class="card-title pl-0 mb-0">Sample giveaway</h4>
-                  </div>
-
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><span class="font-weight-bold"><span class="mr-1">⏰</span> ran</span><span class="super-bold ml-auto">23 days</span></li>
-                    <li class="list-group-item"><span class="font-weight-bold"><span class="mr-1">⏰</span> planned</span><span class="super-bold ml-auto">23 days</span></li>
-                    <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">😊</span></span><span class="super-bold ml-auto">1000 ppl.</span></li>
-                    <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">💰</span></span><span class="super-bold ml-auto">10 prizes</span></li>
-                  </ul>
-                </div>
-              </div>
-              <!-- end of columns -->
+              <% end %>
             </div>
           </div>
         </div>
