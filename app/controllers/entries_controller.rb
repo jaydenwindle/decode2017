@@ -5,6 +5,7 @@ class EntriesController < ApplicationController
         if @giveaway == nil
             redirect_to :not_found
         end
+
         @user = User.new
     end
 

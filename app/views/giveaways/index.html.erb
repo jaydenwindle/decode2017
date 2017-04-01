@@ -10,7 +10,7 @@
 <div class="centerify">
   <div>
     <div class="container">
-      <div class="row mt-2 mb-5">
+      <div class="row pt-4 pb-4">
         <div class="col-12 text-center">
           <h1>Welcome to the Giveaways!</h1>
           <p>Where you give stuff away for free. Because business.</p>
@@ -110,6 +110,7 @@
       <% end %>
 
       <!-- Past: start -->
+      <% if @pastGiveaways.any? %>
       <div class="row">
         <div class="col-12">
           <div class="row">
@@ -120,12 +121,10 @@
 
           <div class="row">
             <div class="col-12">
-              <!-- start columns -->
-              <div class="card-columns">
-                <!-- ng-repeat: giveaway in giveaways -->
-                <div class="card ended">
+              <% @pastGiveaways.each do |giveaway| %>
+                <div class="card ended mb-3">
                   <div class="card-block">
-                    <h4 class="card-title pl-0 mb-0">Sample giveaway</h4>
+                    <h4 class="card-title pl-0 mb-0"><%= giveaway.name %></h4>
                   </div>
 
                   <ul class="list-group list-group-flush">
@@ -134,40 +133,12 @@
                     <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">💰</span></span><span class="super-bold ml-auto">10 prizes</span></li>
                   </ul>
                 </div>
-                <!-- ng-repeat: end -->
-
-                <div class="card ended">
-                  <div class="card-block">
-                    <h4 class="card-title pl-0 mb-0">Sample giveaway</h4>
-                  </div>
-
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><span class="font-weight-bold"><span class="mr-1">⏰</span> ran</span><span class="super-bold ml-auto">23 days</span></li>
-                    <li class="list-group-item"><span class="font-weight-bold"><span class="mr-1">⏰</span> planned</span><span class="super-bold ml-auto">23 days</span></li>
-                    <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">😊</span></span><span class="super-bold ml-auto">1000 ppl.</span></li>
-                    <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">💰</span></span><span class="super-bold ml-auto">10 prizes</span></li>
-                  </ul>
-                </div>
-                
-                <div class="card ended">
-                  <div class="card-block">
-                    <h4 class="card-title pl-0 mb-0">Sample giveaway</h4>
-                  </div>
-
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><span class="font-weight-bold"><span class="mr-1">⏰</span> ran</span><span class="super-bold ml-auto">23 days</span></li>
-                    <li class="list-group-item"><span class="font-weight-bold"><span class="mr-1">⏰</span> planned</span><span class="super-bold ml-auto">23 days</span></li>
-                    <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">😊</span></span><span class="super-bold ml-auto">1000 ppl.</span></li>
-                    <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">💰</span></span><span class="super-bold ml-auto">10 prizes</span></li>
-                  </ul>
-                </div>
-              </div>
-              <!-- end of columns -->
+              <% end %>
             </div>
           </div>
         </div>
       </div>
-      <!-- Past: end -->
+      <% end %>
 
     <% end %>
 
