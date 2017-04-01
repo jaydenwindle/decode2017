@@ -6,7 +6,7 @@
 
   // render view
   var renderIf = () => {
-    $('#prizesView')['fade' + ( products.length === 0 ? 'Out' : 'In' )](500)
+    $('.prizesView')['fade' + ( products.length === 0 ? 'Out' : 'In' )](500)
 
     var btnSubmit = $('[type="submit"], #btnRmProduct')
 
@@ -19,16 +19,18 @@
       product.gaQuantity > 0
     )
 
-    $('#prizes').html(products.map((product, index) => `
-      <li class="list-group-item justify-content-between" id="pid-${ index }">
-        ${ product.title }
-        <div class="justify-content-right">
-          <span class="badge badge-danger badge-pill clickable click-minus">-</span>
-          <span class="badge badge-default badge-pill">${ product.gaQuantity }</span>
-          <span class="badge badge-success badge-pill clickable click-plus">+</span>
-        </div>
-      </li>
-    `).join(''))
+    $('#prizes').html(products.map((product, index) => (
+      `<li class="list-group-item justify-content-between" id="pid-${ index }">` +
+        `<div class="imgish p-4" style="background-image: url(${ (product.image || {}).src || '/assets/placeholder.jpg' }); "></div>` +
+        `${ product.title }` +
+        `<div class="justify-content-right">` +
+          `<span class="badge badge-default color-grey clickable click-minus">–</span>` +
+          `<span class="badge color-black quantity">${ product.gaQuantity }</span>` +
+          `<span class="badge badge-default color-grey clickable click-plus">+</span>` +
+          `<span class="badge color-grey clickable click-rm ml-2">x</span>` +
+        `</div>` +
+      `</li>`
+    )).join(''))
 
     var data = {}
 
@@ -53,6 +55,16 @@
       products[
         parseInt($(this).parents('.list-group-item').attr('id').substr(4), 10)
       ].gaQuantity -= 1
+      render()
+    })
+
+    $('.click-rm').on('click', function (evt) {
+      evt.preventDefault()
+
+      products = products.filter((_, index) =>
+       String(index) !== $(this).parents('.list-group-item').attr('id').substr(4)
+      )
+
       render()
     })
   }
@@ -113,5 +125,11 @@
     render()
   })
 }({
-  title: document.getElementsByTagName('head')[0].innerText || 'Giveaways'
+  title: document.getElementsByTagName('head')[0].innerText || 'Giveaways',
+  buttons: {
+    primary: {
+      label: 'Nevermind (Go back)',
+      href: '/'
+    }
+  }
 })

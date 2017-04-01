@@ -20,3 +20,69 @@
 .ended {
   opacity: .6;
 }
+
+.pointer-helper {
+  background-image: url(/assets/arrow.png);
+  background-size: cover;
+  background-position: center center;
+
+  height: 50px;
+  width: 50px;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+.list-group {
+  border-radius: 0;
+}
+
+.list-group-item {
+  color: #798c9c;
+  background: none;
+  border-left: none;
+  border-right: none;
+}
+
+.list-group-item .badge {
+  font-weight: 300;
+  font-size: 1em;
+}
+
+.list-group-item .click-minus,
+.list-group-item .click-plus {
+  background: #d0d0d0;
+}
+
+.color-black {
+  color: #000;
+}
+
+.color-grey {
+  color: #798c9c;
+}
+
+.list-group-item .click-minus {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.list-group-item .quantity {
+  background: #fff;
+  border-radius: 0;
+}
+
+.list-group-item .click-plus {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.list-group-item .imgish {
+  background-size: cover;
+  background-position: center center;
+}
+
+iframe {
+  border: none;
+}
