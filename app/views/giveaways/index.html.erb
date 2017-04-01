@@ -81,7 +81,9 @@
 
           <div class="row">
             <div class="col-12">
-              <% @giveaways.select{|give| !give.isActive}.each do |gp| %>
+              <!-- start columns -->
+              <div class="card-columns">
+              <% @pastGiveaways.each do |gp| %>
                 <div class="card ended mb-3">
                   <div class="card-block">
                     <h4 class="card-title pl-0 mb-0"><%= gp.name %></h4>
@@ -89,8 +91,10 @@
 
                   <ul class="list-group list-group-flush">
                     <%#<li class="list-group-item"><span class="font-weight-bold"><span class="mr-1">⏰</span> ran</span><span class="super-bold ml-auto">23 days</span></li>%>
-                    <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">😊</span></span><span class="super-bold ml-auto"><%= g.p.users.length %> ppl.</span></li>
-                    <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">💰</span></span><span class="super-bold ml-auto"><%= g.p.products.map(&:quantity).sum %> prizes</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">😊</span></span><span class="super-bold ml-auto"><%= gp.users.length %> ppl.</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">💰</span></span><span class="super-bold ml-auto"><%= gp.products.map(&:quantity).sum %> prizes</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold"><span class="super-bold ml-auto"><%= link_to("Results", giveaways_path(gp.id)) %></span></li>
+
                   </ul>
                 </div>
               <% end %>
