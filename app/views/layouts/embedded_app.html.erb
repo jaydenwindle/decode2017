@@ -6,7 +6,6 @@
     <title><%= application_name %></title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500">
     <%= stylesheet_link_tag 'application' %>
-    <%= javascript_include_tag 'application', "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
   </head>
 
@@ -31,6 +30,8 @@
         forceRedirect: true
       });
     </script>
+
+    <%= javascript_include_tag 'application', "data-turbolinks-track" => true %>
 
     <% if content_for?(:javascript) %>
       <div id="ContentForJavascript" data-turbolinks-temporary>

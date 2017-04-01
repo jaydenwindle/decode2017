@@ -1,3 +1,3 @@
 class User < ApplicationRecord
-    belongs_to :giveaway
+  belongs_to :giveaway
 end

@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+giveaway = Giveaway.new(
+  :store => 1,
+  :products => {"a" => 1, "b"=>2}.to_json,
+  :description => "some desc",
+  :name => "some name",
+)
+giveaway.save

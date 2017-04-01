@@ -1,7 +1,18 @@
 class Giveaway < ApplicationRecord
     has_many :users
     has_many :products
-
+  
+    def choose_winners   
+      winners = {} 
+      users = 1.upto(100).to_a
+      all_applicants = users.to_a.shuffle
+      
+      JSON.parse(products).each do |product_id, quantity|
+        quantity.times { winners[all_applicants.pop] = product_id }
+      end
+      
+      winners
+    end
 
     def get_coupon_code(quantity)
         discount = ShopifyAPI::Discount.new(
