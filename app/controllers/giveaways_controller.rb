@@ -43,6 +43,12 @@ class GiveawaysController < ShopifyApp::AuthenticatedController
       @giveaway = Giveaway.new
     end
 
+    def stats
+      store_id = ShopifyAPI::Shop.current.id
+      g = Giveaway.find(params[:id])
+      render text: g.users.length
+    end
+
     def edit
     end
 

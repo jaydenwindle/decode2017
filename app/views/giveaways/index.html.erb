@@ -80,7 +80,7 @@
                     
                     <ul class="list-group list-group-flush">
                       <%#<li class="list-group-item"><span class="font-weight-bold"><span class="mr-1">⏰</span> left</span><span class="super-bold ml-auto">23 days</span></li>%>
-                      <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">😊</span></span><span class="super-bold ml-auto"><%= g.users.length %> ppl.</span></li>
+                      <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">😊</span></span><span class="super-bold ml-auto" data-magic="<%= g.id %>"><%= g.users.length %> ppl.</span></li>
                       <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">💰</span></span><span class="super-bold ml-auto"><%= g.products.map(&:quantity).sum %> prizes</span></li>
                       <li class="list-group-item"><span class="font-weight-bold">Share Link</span><span class="super-bold ml-auto"><a href="<%= "#{request.protocol}#{request.host_with_port}/giveaways/#{g.id}/enter" %>" target="_blank"><%= "#{request.protocol}#{request.host_with_port}/giveaways/#{g.id}/enter" %></a></span></li>
                     </ul>
