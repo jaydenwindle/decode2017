@@ -39,7 +39,6 @@
 }
 
 .list-group-item {
-  color: #798c9c;
   background: none;
   border-left: none;
   border-right: none;
@@ -87,8 +86,12 @@ iframe {
   border: none;
 }
 
+.card .list-group-item,
 .card a:not(.btn) {
-  color: #798c9c;
+  color: #fff;
+}
+
+.card a:not(.btn) {
   border-bottom: dotted 1px;
 }
 
