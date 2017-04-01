@@ -2,8 +2,6 @@ class GiveawaysController < ShopifyApp::AuthenticatedController
     def index
         store_id = ShopifyAPI::Shop.current.id
         puts store_id
-
-        @new_giveaway = Giveaway.new
         @giveaways = Giveaway.find_by(store: store_id)
         puts @giveaways
     end
