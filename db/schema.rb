@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170401174214) do
+ActiveRecord::Schema.define(version: 20170401175446) do
 
   create_table "giveaways", force: :cascade do |t|
     t.integer  "store"
@@ -27,8 +27,10 @@ ActiveRecord::Schema.define(version: 20170401174214) do
     t.integer  "prod_id"
     t.string   "image_url"
     t.integer  "quantity"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "giveaway_id"
+    t.index ["giveaway_id"], name: "index_products_on_giveaway_id"
   end
 
   create_table "shops", force: :cascade do |t|
@@ -42,8 +44,10 @@ ActiveRecord::Schema.define(version: 20170401174214) do
   create_table "users", force: :cascade do |t|
     t.string   "email"
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "giveaway_id"
+    t.index ["giveaway_id"], name: "index_users_on_giveaway_id"
   end
 
 end
