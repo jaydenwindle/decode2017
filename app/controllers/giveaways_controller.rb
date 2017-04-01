@@ -1,6 +1,4 @@
 class GiveawaysController < ShopifyApp::AuthenticatedController
-    include GiveawaysHelper
-    
     def index
         byebug
         store_id = ShopifyAPI::Shop.current.id
