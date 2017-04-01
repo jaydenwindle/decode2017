@@ -4,7 +4,7 @@ class Giveaway < ApplicationRecord
   
     def choose_winners   
       winners = {} 
-      users = 1.upto(100).to_a
+      #users = 1.upto(100).to_a
       all_applicants = users.to_a.shuffle
       
       JSON.parse(products).each do |product_id, quantity|
