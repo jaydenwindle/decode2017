@@ -161,10 +161,13 @@
       <!-- Past: end -->
 
     <% end %>
-    </div>
 
     <% if !@giveaways.any? %>
-      <iframe class="w-100 h-100" src="/giveaways/new"></iframe>
+      <div class="col-md-8 push-md-2">
+          <%= render("form") %>
+      </div>
     <% end %>
+    </div>
+
   </div>
 </div>

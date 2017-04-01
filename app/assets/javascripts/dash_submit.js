@@ -125,7 +125,7 @@
     render()
   })
 }({
-  title: document.getElementsByTagName('head')[0].innerText || 'Giveaways',
+  title: document.title || 'Giveaways',
   buttons: {
     primary: {
       label: 'Nevermind (Go back)',
