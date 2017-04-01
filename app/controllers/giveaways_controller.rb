@@ -84,12 +84,26 @@ class GiveawaysController < ShopifyApp::AuthenticatedController
     def end_giveaway
       giveaway = Giveaway.find(params[:id])
       winners = giveaway.choose_winners
+      coupons = {}
+
+      #generate coupons key is the product id, value is the coupon
+      giveaway.products.each do |product_id|
+        product = giveaway.products.find_by(id: product_id)
+        coupons[product_id] = giveaway.get_coupon_code(product.quantity, product_id)
+      end
+
+      final = {}
+      winners.keys.each do |winner_id|
+        winner = giveaway.users.find_by(id: winner_id)
+        product = giveaway.products.find_by(id: winners[winner_id])
+        final[winner[:name]] = { name:  product.name, email: winner.email, coupon: coupons[product.id]}
+      end
+
       if giveaway.update(:isActive => true)
         flash[:notice] = "Successfully endded giveaway"
-        redirect_to root_path
+        redirect_to(giveaway_path(params[:final]))
       else
         flash[:notice] = "Endding giveaway failed"
       end
-      winners
     end
 end
