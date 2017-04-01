@@ -10,16 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170401005429) do
+ActiveRecord::Schema.define(version: 20170401042106) do
+
+  create_table "Giveaways_Products", id: false, force: :cascade do |t|
+    t.integer "product_id",  null: false
+    t.integer "giveaway_id", null: false
+  end
+
+  create_table "Giveaways_Users", id: false, force: :cascade do |t|
+    t.integer "user_id",     null: false
+    t.integer "giveaway_id", null: false
+  end
 
   create_table "giveaways", force: :cascade do |t|
     t.integer  "store"
-    t.text     "users"
     t.text     "products"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.text     "description"
+    t.boolean  "isActive"
     t.string   "name"
+    t.string   "description"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "prod_id"
+    t.string   "image_url"
+    t.integer  "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "shops", force: :cascade do |t|

@@ -1,10 +1,18 @@
 <% content_for :javascript do %>
     <script text="text/javascript">
         ShopifyApp.ready(function() {
-            ShopifyApp.Bar.initialize({
+            ShopifyApp.Bar.initialize({ 
                 title: "Dashboard",
-                icon: "<%= asset_path('favicon.ico') %>"
+                icon: "<%= asset_path('favicon.ico') %>",
+                buttons: {
+                    primary: {
+                        label: 'Create New Giveaway',
+                        message: 'save',
+                        href: "/giveaways/new"
+                    }
+                }
             });
+
         });
     </script>
 <% end %>
@@ -19,23 +27,9 @@
           <h1>Welcome to the Giveaways!</h1>
           <p>Where you give stuff away for free. Because business.</p>
 
-          <!-- ng-if: giveaways.length > 0 -->
           <%= link_to("Create new giveaway", new_giveaways_path, :class=>"btn btn-md btn-success") %>
-          <!--<a href="#" class="btn btn-md btn-success" data-toggle="modal" data-target="#createModal">Create new giveaway</a> -->
-          <!-- ng-if: end -->
         </div>
       </div>
-
-      <!-- ng-if: giveaways.length === 0 -->
-      <!--
-        <div class="row">
-          <div class="col-12 text-center">
-            <p class="lead">To start, let's create a new giveaway.</p>
-            <a href="#" class="btn btn-lg btn-success">Create giveaway</a>
-          </div>
-        </div>
-      -->
-      <!-- ng-if: end -->
 
       <% else %>
 
