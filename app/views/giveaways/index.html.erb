@@ -1,5 +1,8 @@
 <% content_for :javascript do %>
   <% javascript_include_tag 'dash.js', :id => 'dash-script', :embed => !@giveaways.any? %>
+  <% if !@giveaways.any? %>
+      <% javascript_include_tag 'dash_submit.js', :id => 'dash-script', :embed => !@giveaways.any? %>
+  <% end %>
 <% end %>
 
 <div class="centerify">
