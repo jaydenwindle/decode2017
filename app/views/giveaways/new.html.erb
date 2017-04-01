@@ -5,11 +5,71 @@
                 title: "New Giveaway",
                 icon: "<%= asset_path('favicon.ico') %>"
             });
-        });
     </script>
 <% end %>
 
-<h1>New Giveaway</h1>
+<div class="col-12 text-center">
+    <br />
+    <h1>Create a new giveaway</h1>
+    <br />
+</div>
+
+<div class="container">
+    <div class="col-md-8 push-md-2">
+
+        <%= form_for :giveaway, url: giveaways_path do |f| %>
+          <div class="form-group row">
+            <label for="gaName" class="col-3 col-form-label">Name</label>
+            <div class="col-9">
+              <input type="text" class="form-control" placeholder="The most amazing fucking giveaway ever">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="gaNumApplications" class="col-3 col-form-label">Number of applicants</label>
+            <div class="col-9">
+              <input type="number" name="gaNumApplications" id="gaNumApplications" class="form-control" min="0" step="1" placeholder="Number of happy people">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-12">
+              <p class="text-center">Add your items below</p>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="gaPrizeName" class="col-3 col-form-label">Prize</label>
+            <div class="col-9">
+              <select name="gaPrizeName" id="gaPrizeName" class="form-control">
+                <option value="a">Tesla Model S</option>
+                <option value="a">Apples (more valuable)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="gaPrizeWinners" class="col-3 col-form-label"># of Winners</label>
+            <div class="col-9">
+              <input type="number" name="gaPrizeWinners" id="gaPrizeWinners" min="0" step="1" class="form-control" placeholder="Unlimited.. right?">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="gaPrizes" class="col-3 col-form-label">Items</label>
+            <div class="col-9">
+              <select name="gaPrizes" id="gaPrizes" class="form-control" multiple>
+                <option value="apples">Apples (10 winners)</option>
+                <option value="tesla">Tesla Model S (1 winner)</option>
+              </select>
+            </div>
+          </div>
+
+          <%= f.submit %>
+        <% end %>
+
+    </div>
+</div>
 
 <%= form_for :giveaway, url: giveaways_path do |f| %>
 
