@@ -86,3 +86,14 @@
 iframe {
   border: none;
 }
+
+.card a:not(.btn) {
+  color: #798c9c;
+  border-bottom: dotted 1px;
+}
+
+.card a:not(.btn):hover,
+.card a:not(.btn):focus,
+.card a:not(.btn):active {
+  border-bottom: none;
+}
