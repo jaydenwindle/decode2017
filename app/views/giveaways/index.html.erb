@@ -2,11 +2,308 @@
     <script text="text/javascript">
         ShopifyApp.ready(function() {
             ShopifyApp.Bar.initialize({
-                title: "Home",
+                title: "Dashboard",
                 icon: "<%= asset_path('favicon.ico') %>"
             });
         });
     </script>
 <% end %>
 
-<h2>Products</h2>
+<div class="centerify">
+  <div>
+    <div class="container">
+
+    <% if @giveaways == nil %>
+      <div class="row mb-5">
+        <div class="col-12 text-center">
+          <h1>Welcome to the Giveaways!</h1>
+          <p>Where you give stuff away for free. Because business.</p>
+
+          <!-- ng-if: giveaways.length > 0 -->
+          <%= link_to("Create new giveaway", new_giveaways_path, :class=>"btn btn-md btn-success") %>
+          <!--<a href="#" class="btn btn-md btn-success" data-toggle="modal" data-target="#createModal">Create new giveaway</a> -->
+          <!-- ng-if: end -->
+        </div>
+      </div>
+
+      <!-- ng-if: giveaways.length === 0 -->
+      <!--
+        <div class="row">
+          <div class="col-12 text-center">
+            <p class="lead">To start, let's create a new giveaway.</p>
+            <a href="#" class="btn btn-lg btn-success">Create giveaway</a>
+          </div>
+        </div>
+      -->
+      <!-- ng-if: end -->
+
+      <% else %>
+
+      <!-- ng-if: giveaways.length > 0 -->
+      <div class="row">
+        <div class="col-12">
+          <div class="row">
+            <div class="col-12">
+              <!-- ng-if: giveaways.length > 1 -->
+              <h3>Most active giveaway</h3>
+              <!-- ng-else: -->
+              <!-- <h3>Current giveaway</h3> -->
+              <!-- ng-if: end -->
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="card card-inverse card-massive col-12" style="background-image: url(https://www.tesla.com/tesla_theme/assets/img/models/section-hero-background.jpg?20170115); ">
+              <div class="w-100 overlay">
+                <div class="col-12 text-left">
+                  <div class="card-block">
+                    <h4 class="card-title mb-0">Sample giveaway</h4>
+                  </div>
+
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><span class="font-weight-bold"><span class="mr-1">⏰</span> left</span><span class="super-bold ml-auto">23 days</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">😊</span></span><span class="super-bold ml-auto">1000 ppl.</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">💰</span></span><span class="super-bold ml-auto">10 prizes</span></li>
+                  </ul>
+
+                  <div class="card-block text-right">
+                    <a href="#" class="btn btn-sm btn-danger">End</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Upcoming: start -->
+      <div class="row">
+        <div class="col-12">
+          <div class="row">
+            <div class="col-12">
+              <h3>Upcoming</h3>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <div class="card-columns">
+                <!-- ng-repeat: giveaway in giveaways -->
+                <div class="card card-outline-success">
+                  <div class="card-block">
+                    <h4 class="card-title pl-0 mb-0">Sample giveaway</h4>
+                  </div>
+
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><span class="font-weight-bold"><span class="mr-1">⏰</span> left</span><span class="super-bold ml-auto">23 days</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">😊</span></span><span class="super-bold ml-auto">1000 ppl.</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">💰</span></span><span class="super-bold ml-auto">10 prizes</span></li>
+                  </ul>
+
+                  <div class="card-block text-right">
+                    <a href="#" class="btn btn-sm btn-danger">End</a>
+                  </div>
+                </div>
+                <!-- ng-repeat: end -->
+
+                <div class="card ongoing">
+                  <div class="card-block">
+                    <h4 class="card-title mb-0">Sample giveaway</h4>
+                  </div>
+
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><span class="font-weight-bold"><span class="mr-1">⏰</span> left</span><span class="super-bold ml-auto">23 days</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">😊</span></span><span class="super-bold ml-auto">1000 ppl.</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">💰</span></span><span class="super-bold ml-auto">10 prizes</span></li>
+                  </ul>
+
+                  <div class="card-block text-right">
+                    <a href="#" class="btn btn-sm btn-danger">End</a>
+                  </div>
+                </div>
+                <div class="card ongoing">
+                  <div class="card-block">
+                    <h4 class="card-title mb-0">Sample giveaway</h4>
+                  </div>
+
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><span class="font-weight-bold"><span class="mr-1">⏰</span> left</span><span class="super-bold ml-auto">23 days</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">😊</span></span><span class="super-bold ml-auto">1000 ppl.</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">💰</span></span><span class="super-bold ml-auto">10 prizes</span></li>
+                  </ul>
+
+                  <div class="card-block text-right">
+                    <a href="#" class="btn btn-sm btn-danger">End</a>
+                  </div>
+                </div>
+                <div class="card ongoing">
+                  <div class="card-block">
+                    <h4 class="card-title mb-0">Sample giveaway</h4>
+                  </div>
+
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><span class="font-weight-bold"><span class="mr-1">⏰</span> left</span><span class="super-bold ml-auto">23 days</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">😊</span></span><span class="super-bold ml-auto">1000 ppl.</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">💰</span></span><span class="super-bold ml-auto">10 prizes</span></li>
+                  </ul>
+
+                  <div class="card-block text-right">
+                    <a href="#" class="btn btn-sm btn-danger">End</a>
+                  </div>
+                </div>
+                <div class="card ongoing">
+                  <div class="card-block">
+                    <h4 class="card-title mb-0">Sample giveaway</h4>
+                  </div>
+
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><span class="font-weight-bold"><span class="mr-1">⏰</span> left</span><span class="super-bold ml-auto">23 days</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">😊</span></span><span class="super-bold ml-auto">1000 ppl.</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">💰</span></span><span class="super-bold ml-auto">10 prizes</span></li>
+                  </ul>
+
+                  <div class="card-block text-right">
+                    <a href="#" class="btn btn-sm btn-danger">End</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Upcoming: end -->
+
+      <!-- Past: start -->
+      <div class="row">
+        <div class="col-12">
+          <div class="row">
+            <div class="col-12">
+              <h3>Past giveaways</h3>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <!-- start columns -->
+              <div class="card-columns">
+                <!-- ng-repeat: giveaway in giveaways -->
+                <div class="card ended">
+                  <div class="card-block">
+                    <h4 class="card-title pl-0 mb-0">Sample giveaway</h4>
+                  </div>
+
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><span class="font-weight-bold"><span class="mr-1">⏰</span> ran</span><span class="super-bold ml-auto">23 days</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold"><span class="mr-1">⏰</span> planned</span><span class="super-bold ml-auto">23 days</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">😊</span></span><span class="super-bold ml-auto">1000 ppl.</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">💰</span></span><span class="super-bold ml-auto">10 prizes</span></li>
+                  </ul>
+                </div>
+                <!-- ng-repeat: end -->
+
+                <div class="card ended">
+                  <div class="card-block">
+                    <h4 class="card-title pl-0 mb-0">Sample giveaway</h4>
+                  </div>
+
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><span class="font-weight-bold"><span class="mr-1">⏰</span> ran</span><span class="super-bold ml-auto">23 days</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold"><span class="mr-1">⏰</span> planned</span><span class="super-bold ml-auto">23 days</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">😊</span></span><span class="super-bold ml-auto">1000 ppl.</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">💰</span></span><span class="super-bold ml-auto">10 prizes</span></li>
+                  </ul>
+                </div>
+                
+                <div class="card ended">
+                  <div class="card-block">
+                    <h4 class="card-title pl-0 mb-0">Sample giveaway</h4>
+                  </div>
+
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><span class="font-weight-bold"><span class="mr-1">⏰</span> ran</span><span class="super-bold ml-auto">23 days</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold"><span class="mr-1">⏰</span> planned</span><span class="super-bold ml-auto">23 days</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">😊</span></span><span class="super-bold ml-auto">1000 ppl.</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">💰</span></span><span class="super-bold ml-auto">10 prizes</span></li>
+                  </ul>
+                </div>
+              </div>
+              <!-- end of columns -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Past: end -->
+
+    <% end %>
+
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="createModalLbl" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="createModalLbl">Create new giveaway</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <form action="/idk-wtf-route-to-use">
+          <div class="form-group row">
+            <label for="gaName" class="col-3 col-form-label">Name</label>
+            <div class="col-9">
+              <input type="text" class="form-control" placeholder="The most amazing fucking giveaway ever">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="gaNumApplications" class="col-3 col-form-label">Number of applicants</label>
+            <div class="col-9">
+              <input type="number" name="gaNumApplications" id="gaNumApplications" class="form-control" min="0" step="1" placeholder="Number of happy people">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-12">
+              <p class="text-center">Add your items below</p>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="gaPrizeName" class="col-3 col-form-label">Prize</label>
+            <div class="col-9">
+              <select name="gaPrizeName" id="gaPrizeName" class="form-control">
+                <option value="a">Tesla Model S</option>
+                <option value="a">Apples (more valuable)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="gaPrizeWinners" class="col-3 col-form-label">Winners</label>
+            <div class="col-9">
+              <input type="number" name="gaPrizeWinners" id="gaPrizeWinners" min="0" step="1" class="form-control" placeholder="Unlimited.. right?">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="gaPrizes" class="col-3 col-form-label">Items</label>
+            <div class="col-9">
+              <select name="gaPrizes" id="gaPrizes" class="form-control" multiple>
+                <option value="apples">Apples (10 winners)</option>
+                <option value="tesla">Tesla Model S (1 winner)</option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Create</button>
+      </div>
+    </div>
+  </div>
+</div>
