@@ -1,7 +1,9 @@
 <% content_for :javascript do %>
-  <% javascript_include_tag 'dash.js', :id => 'dash-script', :embed => !@giveaways.any? %>
+  <% javascript_include_tag 'dash_main', :id => 'dash-main-script', :'data-embed' => !@giveaways.any? %>
+<% end %>
+<% content_for :javascript do %>
   <% if !@giveaways.any? %>
-      <% javascript_include_tag 'dash_submit.js', :id => 'dash-script', :embed => !@giveaways.any? %>
+    <% javascript_include_tag 'dash_submit', :id => 'dash-script', :'data-embed' => !@giveaways.any? %>
   <% end %>
 <% end %>
 

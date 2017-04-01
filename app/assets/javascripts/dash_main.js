@@ -1,6 +1,11 @@
 ~ async function ( CONFIG ) {
   'use strict'
 
+  // special button cases
+  if ( document.getElementById('dash-main-script').getAttribute('data-embed') ) {
+    delete CONFIG.buttons
+  }
+
   // asyncify shopify
   await new Promise((resolve) => ShopifyApp.ready(resolve))
 
