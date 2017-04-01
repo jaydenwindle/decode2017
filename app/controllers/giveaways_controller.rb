@@ -6,6 +6,7 @@ class GiveawaysController < ShopifyApp::AuthenticatedController
         @products.push({id: product.id, handle: product.handle})
       end
       p @products
+      @giveaway = Giveaway.new
     end
 
     def edit
@@ -21,6 +22,5 @@ class GiveawaysController < ShopifyApp::AuthenticatedController
     end
 
     def create
-      storeID = ShopifyAPI::Shop.current.id
     end
 end
