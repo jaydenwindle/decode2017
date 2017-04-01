@@ -1,20 +1,5 @@
 <% content_for :javascript do %>
-    <script text="text/javascript">
-        ShopifyApp.ready(function() {
-            ShopifyApp.Bar.initialize({ 
-                title: "Dashboard",
-                icon: "<%= asset_path('favicon.ico') %>",
-                buttons: {
-                    primary: {
-                        label: 'Create New Giveaway',
-                        message: 'save',
-                        href: "/giveaways/new"
-                    }
-                }
-            });
-
-        });
-    </script>
+  <% javascript_include_tag 'dash.js' %>
 <% end %>
 
 <div class="centerify">

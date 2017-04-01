@@ -1,51 +1,48 @@
 <% content_for :javascript do %>
-    <script text="text/javascript">
-        ShopifyApp.ready(function() {
-            ShopifyApp.Bar.initialize({
-                title: "New Giveaway",
-                icon: "<%= asset_path('favicon.ico') %>"
-            });
-
-            window.addProduct = function () {
-                ShopifyApp.Modal.productPicker({'selectMultiple': true}, function(success, data) {
-
-                    alert(data);
-
-                });
-            }
-        });
-    </script>
+  <% javascript_include_tag 'dash_submit.js' %>
 <% end %>
 
-<div class="col-12 text-center">
-    <br />
-    <h1>Create a new giveaway</h1>
-    <br />
-</div>
-
-<div class="container">
-    <div class="col-md-8 push-md-2">
-
-        <%= form_for :giveaway, url: giveaways_path do |f| %>
-
-          <div class="form-group row">
-            <label for="gaName" class="col-3 col-form-label">Name</label>
-            <div class="col-9">
-              <input type="text" class="form-control" placeholder="The most amazing fucking giveaway ever">
-            </div>
-          </div>
-
-          <div class="form-group row">
-            <label for="products" class="col-3 col-form-label">Add Products</label>
-            <div class="col-9">
-              <input type="hidden" class="form-control" placeholder="The most amazing fucking giveaway ever">
-            </div>
-            <button class="btn btn-md btn-primary" onclick="addProduct()">Add Product</button>
-          </div>
-
-
-          <%= f.submit :class=>"btn btn-md btn-success float-right"%>
-        <% end %>
-
+<div class="centerify">
+  <div>
+    <div class="w-100 text-center pt-1 pb-1">
+      <h1>Create a new giveaway</h1>
     </div>
+
+    <div class="container">
+      <div class="col-md-8 push-md-2">
+        <%= form_for :giveaway, url: '/giveaways/create' do |f| %>
+          <div class="form-group row">
+            <label for="name" class="col-3 col-form-label">Name</label>
+            <div class="col-9">
+              <input type="text" name="name" id="name" class="form-control" placeholder="An Awesome Giveaway" required>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="description" class="col-3 col-form-label">Description</label>
+            <div class="col-9">
+              <input type="text" name="description" id="description" class="form-control" placeholder="The most amazing fucking giveaway ever" required>
+            </div>
+          </div>
+
+          <div class="form-group row" id="prizesView" style="display: none; ">
+            <label for="prizes" class="col-3 col-form-label">Prizes</label>
+            <div class="col-9">
+              <ul class="list-group" id="prizes"></ul>
+            </div>
+          </div>
+
+          <!-- Ssshh, I'm hiding -->
+          <input type="hidden" name="products">
+
+          <div class="form-group row mt-4">
+            <div class="col-9 offset-3 text-right">
+              <button type="button" id="btnAddProduct" class="btn btn-md btn-primary">Add Product</button>
+              <button type="submit" class="btn btn-md btn-success" disabled>Save Giveaway</div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
