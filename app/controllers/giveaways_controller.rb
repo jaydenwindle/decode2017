@@ -15,13 +15,15 @@ class GiveawaysController < ShopifyApp::AuthenticatedController
     end
 
     def update
+      # basically pseudo code someone who knows RoR plz help
+      Giveaway.destroy(store: ShopifyAPI::Shop.current.id, name: params.name)
     end
 
     def destroy
     end
 
     def create
-      storeID = ShopifyAPI::Shop.current.id
-      giveProducts =
+      giveaway = Giveaway.new(params)
+      giveaway.save
     end
 end
