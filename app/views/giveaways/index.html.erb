@@ -82,7 +82,6 @@
           <div class="row">
             <div class="col-12">
               <!-- start columns -->
-              <div class="card-columns">
               <% @pastGiveaways.each do |gp| %>
                 <div class="card ended mb-3">
                   <div class="card-block">
@@ -93,12 +92,15 @@
                     <%#<li class="list-group-item"><span class="font-weight-bold"><span class="mr-1">⏰</span> ran</span><span class="super-bold ml-auto">23 days</span></li>%>
                     <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">😊</span></span><span class="super-bold ml-auto"><%= gp.users.length %> ppl.</span></li>
                     <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">💰</span></span><span class="super-bold ml-auto"><%= gp.products.map(&:quantity).sum %> prizes</span></li>
-                    <li class="list-group-item"><span class="font-weight-bold"><span class="super-bold ml-auto"><%= link_to("Results", giveaways_path(gp.id)) %></span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">
+                <div class="text-right">
+                    <%= link_to("Results", giveaways_path(gp.id), :class=>"btn btn-sm btn-primary float-right") %>
+                 </div>
+             </li>
 
                   </ul>
                 </div>
               <% end %>
-            </div>
           </div>
         </div>
       </div>
