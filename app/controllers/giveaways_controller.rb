@@ -8,7 +8,7 @@ class GiveawaysController < ShopifyApp::AuthenticatedController
       @giveaway = Giveaway.new
       byebug
     end
-    
+
     def edit
     end
 
@@ -24,7 +24,6 @@ class GiveawaysController < ShopifyApp::AuthenticatedController
     end
 
     def create
-      # will change when aki completes his parsing func
       giveawayProducts = ""
       giveawayDisciption = ""
       giveawayName = ""
