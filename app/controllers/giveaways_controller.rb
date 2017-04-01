@@ -14,14 +14,12 @@ class GiveawaysController < ShopifyApp::AuthenticatedController
       # get metadata
       @prettyStart = Hash.new
       @nApplicants = Hash.new
-      @prizes = Hash.new
       @nPrizes = Hash.new
 
       @giveaways.each do |giveaway|
         @prettyStart[giveaway.id] = giveaway.created_at.strftime('%b %d (%Y)')
-        @prizes[giveaway.id] = JSON.parse(giveaway.products)
-        @nApplicants[giveaway.id] = 0 # TODO
-        @nPrizes[giveaway.id] = @prizes[giveaway.id].count
+        @nApplicants[giveaway.id] = giveaway.users.length
+        @nPrizes[giveaway.id] = giveaway.products.length
       end
 
       # figure out our "main" giveaway

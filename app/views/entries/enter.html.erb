@@ -47,21 +47,33 @@
 
   <div class="row pb-5">
     <div class="col-10 offset-1">
-<%= form_for :user, url: enter_giveaway_path do |f| %>
-        <div class="form-group row">
-          <div class="input-groupish col-12">
-            <%= f.label :name %><br>
-            <%= f.text_field :name, :class=>"col-12 form-control", :placeholder=>"Name"%>
+        <%= form_for :user, url: enter_giveaway_path do |f| %>
+          <div class="form-group row">
+              <input type="text" class="form-control col-6" placeholder="First Name">
+              <input type="text" class="form-control col-6" placeholder="Last Name">
           </div>
-        </div>
+          
+          <div class="form-group row">
+              <input type="text" class="form-control col-12" placeholder="Email Address">
+          </div>
+          
+          <div class="form-group row">
+              <input type="text" class="form-control col-6" placeholder="Street Address">
+              <input type="text" class="form-control col-6" placeholder="Postal Code">
+          </div>
 
-        <div class="form-group row">
-          <%= f.label :email %><br>
-          <%= f.email_field :email, :class=>"col-12 form-control", :placeholder=>"Email address"%>
-        </div>
+          <div class="form-group row">
+              <input type="text" class="form-control col-4" placeholder="City">
+              <input type="text" class="form-control col-4" placeholder="Province">
+              <select class="form-control col-4">
+                  <option>Canada</option>
+                  <option>United States</option>
+              </select>
+          </div>
 
-        <%= f.submit :class=>"btn btn-md btn-success"%>
-<% end %>
-    </div>
+          <div class="form-group row text-center">
+            <%= f.submit :class=>"btn btn-lg btn-primary"%>
+          </div>
+      <% end %>
   </div>
 </div>
