@@ -16,21 +16,22 @@
 
   var renderProducts = function () {
     products = products.filter(function (product) {
-      product.gaQuantity > 0
+      return product.gaQuantity > 0
     })
 
     $('#prizes').html(products.map(function (product, index) {
-      return
-        '<li class="list-group-item justify-content-between" id="pid-${ index }">' +
-        '<div class="imgish p-4" style="background-image: url(' + ((product.image || {}).src || '/assets/placeholder.jpg') + '); "></div>' +
-        product.title +
-        '<div class="justify-content-right">' +
-          '<span class="badge badge-default color-grey clickable click-minus">–</span>' +
-          '<span class="badge color-black quantity">' + product.gaQuantity + '</span>' +
-          '<span class="badge badge-default color-grey clickable click-plus">+</span>' +
-          '<span class="badge color-grey clickable click-rm ml-2">x</span>' +
-        '</div>' +
-      '</li>'
+      return (
+        '<li class="list-group-item justify-content-between" id="pid-' + index + '">' +
+          '<div class="imgish p-4" style="background-image: url(' + ((product.image || {}).src || '/assets/placeholder.jpg') + '); "></div>' +
+          product.title +
+          '<div class="justify-content-right">' +
+            '<span class="badge badge-default color-grey clickable click-minus">–</span>' +
+            '<span class="badge color-black quantity">' + product.gaQuantity + '</span>' +
+            '<span class="badge badge-default color-grey clickable click-plus">+</span>' +
+            '<span class="badge color-grey clickable click-rm ml-2">x</span>' +
+          '</div>' +
+        '</li>'
+      )
     }).join(''))
 
     var data = {}
@@ -62,8 +63,9 @@
     $('.click-rm').on('click', function (evt) {
       evt.preventDefault()
 
+      var target = $(this).parents('.list-group-item').attr('id').substr(4)
       products = products.filter(function (_, index) {
-       return String(index) !== $(this).parents('.list-group-item').attr('id').substr(4)
+        return String(index) !== target
       })
 
       render()
@@ -100,7 +102,7 @@
       resolve(data.products.map(function (product) {
         product.gaQuantity = 1
         return product
-      })
+      }))
     })
   }
 
@@ -115,7 +117,7 @@
     $('#btnAddProduct').on('click', function (evt) {
       evt.preventDefault()
 
-      getProduct().then(function (prod) {
+      getProduct(function (prod) {
         products = products.concat(prod)
         render()
       })
