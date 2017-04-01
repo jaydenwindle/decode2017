@@ -42,7 +42,7 @@
       <% @giveaways.select(&:isActive?).each do |g| %>
           <!-- main giveaway -->
           <div class="row">
-            <div class="card card-inverse card-massive col-12" style="background-image: url(https://www.tesla.com/tesla_theme/assets/img/models/section-hero-background.jpg?20170115); ">
+            <div class="card card-inverse card-massive col-12" style="background-image: url(<%= g.products[0].image_url %>); ">
               <div class="w-100 overlay">
                 <div class="col-12 text-left">
                   <div class="card-block">

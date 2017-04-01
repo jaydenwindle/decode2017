@@ -71,12 +71,13 @@ class GiveawaysController < ShopifyApp::AuthenticatedController
       product_list.each do |p, q|
           product_info = ShopifyAPI::Product.find(p)
           puts product_info
+          puts product_info.images
 
           giveaway.products << Product.new(
             prod_id: p,
             quantity: q,
             name: product_info.title,
-            image_url: product_info.images[0].src || "/assets/placeholder.jpg"
+            image_url: product_info.images.length > 0 ? product_info.images[0].src : "/assets/placeholder.jpg"
           )
       end
 
