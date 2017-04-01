@@ -23,18 +23,19 @@ class GiveawaysController < ShopifyApp::AuthenticatedController
     end
 
     def create
-      giveawayProducts = JSON.parse(params[:products])
-      giveawayDisciption = params[:description]
+      giveawayProducts = params[:products]
+      giveawayDescription = params[:description]
       giveawayName = params[:name]
-      byebug
+      #byebug
       giveaway = Giveaway.new(
         :store => ShopifyAPI::Shop.current.id,
         :products => giveawayProducts,
-        :discription => giveawayDisciption,
+        :description => giveawayDescription,
         :name =>  giveawayName
       )
       if giveaway.save
         flash[:notice] = "Successfully created giveaway"
+        redirect_to root_path
       else
         flash[:notice] = "Creating giveaway failed"
       end
