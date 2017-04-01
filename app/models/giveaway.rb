@@ -1,6 +1,6 @@
 class Giveaway < ApplicationRecord
-    has_and_belongs_to_many :user
-    has_and_belongs_to_many :product
+    has_many :users
+    has_many :products
 
 
     def get_coupon_code(quantity)
