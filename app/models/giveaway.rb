@@ -14,7 +14,7 @@ class Giveaway < ApplicationRecord
       winners
     end
 
-    def get_coupon_code(quantity)
+    def get_coupon_code(quantity, product_id)
         discount = ShopifyAPI::Discount.new(
             {
                 discount_type: "percentage",
@@ -22,7 +22,10 @@ class Giveaway < ApplicationRecord
                 code: unique_id,
                 usage_limit: quantity,
                 applies_once_per_customer: true,
-                times_used: quantity
+                times_used: quantity,
+                applies_to_id: product_id,
+                applies_to_resource: "product"
+
             }
         )
         unique_id
