@@ -4,7 +4,8 @@ class GiveawaysController < ShopifyApp::AuthenticatedController
     def index
       store_id = ShopifyAPI::Shop.current.id
       @giveaways = Giveaway.where(store: store_id)
-# get current giveaways
+
+      # get current giveaways
       @giveaways = Giveaway.where(
         store: store_id,
         isActive: true
