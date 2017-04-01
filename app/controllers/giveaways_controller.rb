@@ -50,11 +50,19 @@ class GiveawaysController < ShopifyApp::AuthenticatedController
     end
 
     def update
+      giveaway = Giveaway.find(params[:id])
+      winners = giveaway.choose_winners
+      giveaway[:isActive] = false
+      if giveaway.save
+        flash[:notice] = "Successfully endded giveaway"
+        redirect_to root_path
+      else
+        flash[:notice] = "Endding giveaway failed"
+      end
+      winners
     end
 
     def destroy
-      # basically pseudo code someone who knows RoR plz help
-      #Giveaway.destroy()
     end
 
     def create
