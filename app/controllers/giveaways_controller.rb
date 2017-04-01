@@ -4,8 +4,7 @@ class GiveawaysController < ShopifyApp::AuthenticatedController
     def index
       store_id = ShopifyAPI::Shop.current.id
       @giveaways = Giveaway.where(store: store_id)
-
-      # get current giveaways
+# get current giveaways
       @giveaways = Giveaway.where(
         store: store_id,
         isActive: true
@@ -60,17 +59,23 @@ class GiveawaysController < ShopifyApp::AuthenticatedController
     end
 
     def create
-      giveawayProducts = params[:products]
       giveawayDescription = params[:description]
       giveawayName = params[:name]
 
+      product_list= JSON.parse(params[:products])
+
       giveaway = Giveaway.new(
         :store => ShopifyAPI::Shop.current.id,
-        :products => giveawayProducts,
         :description => giveawayDescription,
         :name =>  giveawayName,
         :isActive => true
       )
+
+      product_list.each do |p, q|
+          product_info = ShopifyAPI::Product.find(p)
+          p product_info
+          giveaway.products << Product.new(prod_id: p, quantity: q)
+      end
 
       if giveaway.save
         flash[:notice] = "Successfully created giveaway"
