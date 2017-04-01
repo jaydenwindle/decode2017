@@ -14,14 +14,12 @@ class GiveawaysController < ShopifyApp::AuthenticatedController
       # get metadata
       @prettyStart = Hash.new
       @nApplicants = Hash.new
-      @prizes = Hash.new
       @nPrizes = Hash.new
 
       @giveaways.each do |giveaway|
         @prettyStart[giveaway.id] = giveaway.created_at.strftime('%b %d (%Y)')
-        @prizes[giveaway.id] = JSON.parse(giveaway.products)
-        @nApplicants[giveaway.id] = 0 # TODO
-        @nPrizes[giveaway.id] = @prizes[giveaway.id].count
+        @nApplicants[giveaway.id] = giveaway.users.length
+        @nPrizes[giveaway.id] = giveaway.products.length
       end
 
       # figure out our "main" giveaway
@@ -67,17 +65,23 @@ class GiveawaysController < ShopifyApp::AuthenticatedController
     end
 
     def create
-      giveawayProducts = params[:products]
       giveawayDescription = params[:description]
       giveawayName = params[:name]
 
+      product_list= JSON.parse(params[:products])
+
       giveaway = Giveaway.new(
         :store => ShopifyAPI::Shop.current.id,
-        :products => giveawayProducts,
         :description => giveawayDescription,
         :name =>  giveawayName,
         :isActive => true
       )
+
+      product_list.each do |p, q|
+          product_info = ShopifyAPI::Product.find(p)
+          p product_info
+          giveaway.products << Product.new(prod_id: p, quantity: q)
+      end
 
       if giveaway.save
         flash[:notice] = "Successfully created giveaway"

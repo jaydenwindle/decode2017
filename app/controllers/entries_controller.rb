@@ -10,17 +10,10 @@ class EntriesController < ApplicationController
 
     def new
         giveaway = Giveaway.find(params[:id])
-        @user = User.find_by(email: params[:user][:name])
-        if !@user
-            @user = User.create(:email => params[:user][:email]) do |u|
-                u.name = params[:user][:name]
-            end
-            @user.save
-        end
 
-        giveaway.user << @user
+        giveaway.users.create(params.require(:user).permit(:name, :email))
+
         redirect_to :enter_confirm
-        
     end
 
     def confirm
