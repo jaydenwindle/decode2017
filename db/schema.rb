@@ -27,9 +27,9 @@ ActiveRecord::Schema.define(version: 20170401042106) do
     t.text     "products"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.boolean  "isActive"
+    t.text     "description"
     t.string   "name"
-    t.string   "description"
+    t.boolean  "isActive"
   end
 
   create_table "products", force: :cascade do |t|
