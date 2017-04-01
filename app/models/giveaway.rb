@@ -15,10 +15,10 @@ class Giveaway < ApplicationRecord
     end
 
     def get_coupon_code(quantity, product_id)
-        discount = ShopifyAPI::Discount.new(
+        @discount = ShopifyAPI::Discount.new(
             {
                 discount_type: "percentage",
-                value: "100%",
+                value: "100",
                 code: unique_id,
                 usage_limit: quantity,
                 applies_once_per_customer: true,
@@ -28,6 +28,14 @@ class Giveaway < ApplicationRecord
         )
         p discount
         unique_id
+    end
+
+    def discount
+        @discount
+    end
+
+    def save_discount
+        !@discount.nil? && @discount.save
     end
 
     private
