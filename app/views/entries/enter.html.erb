@@ -1,0 +1,18 @@
+<h1><%= @giveaway.name %></h1>
+
+
+<%= form_for :user, url: enter_giveaway_path do |f| %>
+    <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+    </p>
+
+    <p>
+    <%= f.label :email %><br>
+    <%= f.email_field :email %>
+    </p>
+
+    <p>
+    <%= f.submit %>
+    </p>
+<% end %>
