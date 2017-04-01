@@ -50,15 +50,6 @@ class GiveawaysController < ShopifyApp::AuthenticatedController
     end
 
     def update
-      giveaway = Giveaway.find(params[:id])
-      winners = giveaway.choose_winners
-      if giveaway.update(:isActive => true)
-        flash[:notice] = "Successfully endded giveaway"
-        redirect_to root_path
-      else
-        flash[:notice] = "Endding giveaway failed"
-      end
-      winners
     end
 
     def destroy
@@ -89,5 +80,17 @@ class GiveawaysController < ShopifyApp::AuthenticatedController
       else
         flash[:notice] = "Creating giveaway failed"
       end
+    end
+
+    def end_giveaway
+      giveaway = Giveaway.find(params[:id])
+      winners = giveaway.choose_winners
+      if giveaway.update(:isActive => true)
+        flash[:notice] = "Successfully endded giveaway"
+        redirect_to root_path
+      else
+        flash[:notice] = "Endding giveaway failed"
+      end
+      winners
     end
 end

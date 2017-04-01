@@ -7,8 +7,8 @@ class Giveaway < ApplicationRecord
       #users = 1.upto(100).to_a
       all_applicants = users.to_a.shuffle
       
-      JSON.parse(products).each do |product_id, quantity|
-        quantity.times { winners[all_applicants.pop] = product_id }
+      products.each do |product|
+        product[:quantity].times { winners[all_applicants.pop] = product[:prod_id] }
       end
       
       winners
