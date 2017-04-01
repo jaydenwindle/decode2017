@@ -52,8 +52,7 @@ class GiveawaysController < ShopifyApp::AuthenticatedController
     def update
       giveaway = Giveaway.find(params[:id])
       winners = giveaway.choose_winners
-      giveaway[:isActive] = false
-      if giveaway.save
+      if giveaway.update(:isActive => true)
         flash[:notice] = "Successfully endded giveaway"
         redirect_to root_path
       else
