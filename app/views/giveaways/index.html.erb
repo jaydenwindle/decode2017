@@ -39,23 +39,25 @@
             </div>
           </div>
 
+      <% @giveaways.select(&:isActive?).each do |g| %>
           <!-- main giveaway -->
           <div class="row">
             <div class="card card-inverse card-massive col-12" style="background-image: url(https://www.tesla.com/tesla_theme/assets/img/models/section-hero-background.jpg?20170115); ">
               <div class="w-100 overlay">
                 <div class="col-12 text-left">
                   <div class="card-block">
-                    <h4 class="card-title mb-0">Sample giveaway</h4>
+                    <h4 class="card-title mb-0"><%= g.name %></h4>
                   </div>
 
                   <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><span class="font-weight-bold"><span class="mr-1">⏰</span> left</span><span class="super-bold ml-auto">23 days</span></li>
-                    <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">😊</span></span><span class="super-bold ml-auto">1000 ppl.</span></li>
-                    <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">💰</span></span><span class="super-bold ml-auto">10 prizes</span></li>
+                    <%#<li class="list-group-item"><span class="font-weight-bold"><span class="mr-1">⏰</span> left</span><span class="super-bold ml-auto">23 days</span></li>%>
+                    <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">😊</span></span><span class="super-bold ml-auto"><%= g.users.length %> ppl.</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">Number of <span class="ml-1">💰</span></span><span class="super-bold ml-auto"><%= g.products.map(&:quantity).sum %> prizes</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">Share Link</span><span class="super-bold ml-auto"><a href="<%= "#{request.protocol}#{request.host_with_port}/giveaways/#{g.id}/enter" %>" target="_blank"><%= "#{request.protocol}#{request.host_with_port}/giveaways/#{g.id}/enter" %></a></span></li>
                   </ul>
 
                   <div class="card-block text-right">
-                    <a href="#" class="btn btn-sm btn-danger">End</a>
+                     <%= link_to("End", end_giveaway_path(g.id), :class=>"btn btn-sm btn-danger")%>
                   </div>
                 </div>
               </div>
@@ -64,6 +66,8 @@
         </div>
       </div>
       <!-- "main" giveaway  -->
+      <% end %>
+
 
       <% if @giveaways.length > 1 %>
         <!-- Current: start -->
