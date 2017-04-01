@@ -31,7 +31,7 @@
           '<span class="badge color-grey clickable click-rm ml-2">x</span>' +
         '</div>' +
       '</li>'
-    })).join(''))
+    }).join(''))
 
     var data = {}
 
