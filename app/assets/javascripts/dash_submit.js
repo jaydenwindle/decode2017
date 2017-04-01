@@ -102,8 +102,10 @@
   // asyncify shopify
   await new Promise((resolve) => ShopifyApp.ready(resolve))
 
-  // init the app
-  ShopifyApp.Bar.initialize(CONFIG)
+  // init the app (if not embeded)
+  if ( !document.getElementById('dash-script').getAttribute('data-embed') ) {
+    ShopifyApp.Bar.initialize(CONFIG)
+  }
 
   // add binding for product modal
   $('#btnAddProduct').on('click', async evt => {
