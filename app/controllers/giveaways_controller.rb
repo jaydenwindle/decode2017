@@ -6,7 +6,6 @@ class GiveawaysController < ShopifyApp::AuthenticatedController
 
     def new
       @giveaway = Giveaway.new
-      byebug
     end
 
     def edit
@@ -24,9 +23,10 @@ class GiveawaysController < ShopifyApp::AuthenticatedController
     end
 
     def create
-      giveawayProducts = ""
-      giveawayDisciption = ""
-      giveawayName = ""
+      giveawayProducts = JSON.parse(params[:products])
+      giveawayDisciption = params[:description]
+      giveawayName = params[:name]
+      byebug
       giveaway = Giveaway.new(
         :store => ShopifyAPI::Shop.current.id,
         :products => giveawayProducts,
