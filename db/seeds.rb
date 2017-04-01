@@ -10,5 +10,6 @@ giveaway = Giveaway.new(
   :products => {"a" => 1, "b"=>2}.to_json,
   :description => "some desc",
   :name => "some name",
+  :isActive => true
 )
 giveaway.save
