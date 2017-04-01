@@ -30,6 +30,14 @@
       </li>
     `).join(''))
 
+    var data = {}
+
+    products.forEach(product => {
+      data[product.id] = product.gaQuantity
+    })
+
+    $('[name="products"]').val(JSON.stringify(data))
+
     $('.click-plus').on('click', function (evt) {
       evt.preventDefault()
 
@@ -103,33 +111,6 @@
     )
 
     render()
-  })
-
-  // binding for submission
-  $('form').on('submit', evt => {
-    evt.preventDefault()
-
-    var data = {}
-
-    // because like fucking rails
-    $('form').serializeArray().forEach(kv => {
-      data[k.name] = k.value
-    })
-
-    // add products
-    data.products = {}
-    products.forEach(product => {
-      data.products[product.id] = product.gaQuantity
-    })
-
-    // send off
-    $.ajax({
-      method: 'POST',
-      url: '/giveaways/new',
-      data: 'json=' + encodeURIComponent(JSON.stringify(data)),
-
-      // do things
-    })
   })
 }({
   title: document.getElementsByTagName('head')[0].innerText || 'Giveaways'

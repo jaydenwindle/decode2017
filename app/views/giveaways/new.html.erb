@@ -10,7 +10,7 @@
 
     <div class="container">
       <div class="col-md-8 push-md-2">
-        <form id="createForm">
+        <%= form_for :giveaway, url: '/giveaways/create' do |f| %>
           <div class="form-group row">
             <label for="name" class="col-3 col-form-label">Name</label>
             <div class="col-9">
@@ -32,14 +32,16 @@
             </div>
           </div>
 
+          <!-- Ssshh, I'm hiding -->
+          <input type="hidden" name="products">
+
           <div class="form-group row mt-4">
             <div class="col-9 offset-3 text-right">
               <button type="button" id="btnAddProduct" class="btn btn-md btn-primary">Add Product</button>
-              <button type="button" id="btnRmProduct" class="btn btn-md btn-danger" disabled>Remove Product</button>
               <button type="submit" class="btn btn-md btn-success" disabled>Save Giveaway</div>
             </div>
           </div>
-        </form>
+        <% end %>
       </div>
     </div>
   </div>
