@@ -24,7 +24,13 @@ class GiveawaysController < ShopifyApp::AuthenticatedController
 
     def create
       # will change when aki completes his parsing func
-      giveaway = Giveaway.new(params)
-      giveaway.save
+      giveawayProducts = text
+      giveawayDisciption = text
+      giveawayName = string
+      giveaway = Giveaway.new(:store => ShopifyAPI::Shop.current.id, :products => giveawayProducts, :discription => giveawayDisciption, :name =>  giveawayName)
+      if giveaway.save
+        flash[:notice] = "Successfully created giveaway"
+      else
+        flash[:notice] = "Creating giveaway failed"
     end
 end
