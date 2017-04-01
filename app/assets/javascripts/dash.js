@@ -7,7 +7,7 @@
   // init the app
   ShopifyApp.Bar.initialize(CONFIG)
 }({
-  title: document.getElementsByTagName('head')[0].innerText || 'Giveaways',
+  title: document.title || 'Giveaways',
   buttons: {
     primary: {
       label: 'Create Giveaway',
