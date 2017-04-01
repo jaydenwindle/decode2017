@@ -5,6 +5,7 @@
                 title: "New Giveaway",
                 icon: "<%= asset_path('favicon.ico') %>"
             });
+        });
     </script>
 <% end %>
 
@@ -65,7 +66,7 @@
             </div>
           </div>
 
-          <%= f.submit %>
+          <%= f.submit :class=>"btn btn-md btn-success float-right"%>
         <% end %>
 
     </div>
