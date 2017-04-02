@@ -18,3 +18,9 @@ rake db:migrate
 # You're golden!
 bin/rails server
 ```
+
+## Presentation
+Click on the image to be redirected to our presentation slides!
+<a href="https://docs.google.com/presentation/d/1bccIJ-UB9OcdyJTIv7_rasnex8fuz_DPv_m_-dj8pQQ/edit?usp=sharing">  
+  <img src="https://github.com/jaydenwindle/decode2017/blob/master/public/presentation.png" width="50%" height="50%"/>
+</a>
