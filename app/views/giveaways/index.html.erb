@@ -10,14 +10,15 @@
 <div class="centerify">
   <div>
     <div class="container">
+
+      <% if !@giveaways.any? and !@pastGiveaways.any? %>
+
       <div class="row pt-4 pb-4">
         <div class="col-12 text-center">
           <h1>Welcome to the Giveaways!</h1>
           <p>Where you give stuff away for free. Because business.</p>
         </div>
       </div>
-
-      <% if !@giveaways.any? %>
 
         <div class="row" ng-if="giveaways.length === 0">
           <div class="col-8 offset-2 text-center">
@@ -52,6 +53,7 @@
                 </ul>
 
                 <div class="card-block text-right">
+                    <%= link_to("Details", giveaway_path(g.id), :class=>"btn btn-sm btn-primary")%>
                     <%= link_to("End", end_giveaway_path(g.id), :class=>"btn btn-sm btn-danger")%>
                 </div>
               </div>
@@ -86,7 +88,7 @@
                     </ul>
                   
                     <div class="card-block text-right">
-                        <%= link_to("Results", giveaways_path(g.id), :class=>"btn btn-sm btn-primary") %>
+                        <%= link_to("Results", giveaway_path(g.id), :class=>"btn btn-sm btn-primary") %>
                     </div>
                   </div>
                 </div>
@@ -96,7 +98,7 @@
       <% end %>
     <% end %>
 
-    <% if !@giveaways.any? %>
+    <% if !@giveaways.any? and !@pastGiveaways.any? %>
       <div class="col-md-8 push-md-2">
           <%= render("form") %>
       </div>

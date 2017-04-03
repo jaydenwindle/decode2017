@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170401191616) do
+ActiveRecord::Schema.define(version: 20170403205717) do
 
   create_table "giveaways", force: :cascade do |t|
     t.integer  "store"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20170401191616) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "giveaway_id"
+    t.string   "item_won"
     t.index ["giveaway_id"], name: "index_users_on_giveaway_id"
   end
 
