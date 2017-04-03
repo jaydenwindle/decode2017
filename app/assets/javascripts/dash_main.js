@@ -11,16 +11,16 @@
     ShopifyApp.Bar.initialize(CONFIG)
   })
 
-  // magic
-  var magic = function () {
-    $('[data-magic]').each(function (_, elm) {
-      $.get('/giveaways/' + $(elm).attr('data-magic') + '/stats', function (_, __, data) {
-        $(elm).text(data.responseText)
-      })
-    })
+  //// magic
+  //var magic = function () {
+    //$('[data-magic]').each(function (_, elm) {
+      //$.get('/giveaways/' + $(elm).attr('data-magic') + '/stats', function (_, __, data) {
+        //$(elm).text(data.responseText)
+      //})
+    //})
 
-    requestAnimationFrame(magic)
-  }
+    //requestAnimationFrame(magic)
+  //}
 
   magic()
 }({
