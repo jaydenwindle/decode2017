@@ -19,6 +19,10 @@ rake db:migrate
 bin/rails server
 ```
 
+## Demo video
+Check out the live giveaway we did to demo our work at deCode!
+[![Giveaway app demo](https://img.youtube.com/vi/W6xD4u978WU/0.jpg)](https://www.youtube.com/watch?v=W6xD4u978WU)
+
 ## Presentation
 Click on the image to be redirected to our presentation slides! <br>
 <a href="https://docs.google.com/presentation/d/1bccIJ-UB9OcdyJTIv7_rasnex8fuz_DPv_m_-dj8pQQ/edit?usp=sharing">  
