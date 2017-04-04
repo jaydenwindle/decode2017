@@ -109,7 +109,7 @@ class GiveawaysController < ShopifyApp::AuthenticatedController
       giveaway = Giveaway.find(params[:id])
 
       giveaway.choose_winners
-      giveaway.update(:isActive => true)
+      giveaway.update(:isActive => false)
 
       redirect_to giveaway_path(params[:id])
     end
