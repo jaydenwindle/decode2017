@@ -1,16 +1,22 @@
 class Giveaway < ApplicationRecord
     has_many :users
+    has_many :winners, :class_name => "User" 
     has_many :products
   
     def choose_winners   
-      winners = {} 
       all_applicants = users.to_a.shuffle
       
       products.each do |product|
-        product[:quantity].times { winners[all_applicants.pop] = product[:prod_id] }
+        product[:quantity].times do
+            w = all_applicants.pop
+            if !w 
+                return 
+            else
+                w.item_won = product[:prod_id]
+                winners << w
+            end
+        end
       end
-      
-      winners
     end
 
     def get_coupon_code(quantity, product_id)
@@ -25,7 +31,6 @@ class Giveaway < ApplicationRecord
                 applies_to_resource: "product"
             }
         )
-        p discount
         unique_id
     end
 

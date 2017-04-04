@@ -53,6 +53,16 @@ class GiveawaysController < ShopifyApp::AuthenticatedController
     end
 
     def show
+        @giveaway = Giveaway.find(params[:id])
+        if !@giveaway.isActive
+            @giveaway.winners.each do |winner|
+                prod_name = ShopifyAPI::Product.find(winner.item_won).title
+                winner.item_won = prod_name
+            end
+            render "winners"
+        else
+            render "show"
+        end
     end
 
     def update
@@ -97,27 +107,11 @@ class GiveawaysController < ShopifyApp::AuthenticatedController
 
     def end_giveaway
       giveaway = Giveaway.find(params[:id])
-      winners = giveaway.choose_winners
-      coupons = {}
 
-      #generate coupons key is the product id, value is the coupon
-      giveaway.products.each do |product_id|
-        product = giveaway.products.find_by(id: product_id)
-        coupons[product_id] = giveaway.get_coupon_code(product.quantity, product_id)
-      end
+      giveaway.choose_winners
+      giveaway.update(:isActive => false)
 
-      final = {}
-      winners.keys.each do |winner_id|
-        winner = giveaway.users.find_by(id: winner_id)
-        product = giveaway.products.find_by(id: winners[winner_id])
-        final[winner[:name]] = { name:  product.name, email: winner.email, coupon: coupons[product.id]}
-      end
-
-      if giveaway.update(:isActive => true)
-        flash[:notice] = "Successfully endded giveaway"
-        redirect_to(giveaway_path(params[:final]))
-      else
-        flash[:notice] = "Endding giveaway failed"
-      end
+      redirect_to giveaway_path(params[:id])
     end
 end
+
