@@ -22,7 +22,7 @@
     //requestAnimationFrame(magic)
   //}
 
-  magic()
+  //magic()
 }({
   title: document.title || 'Giveaways',
   buttons: {
