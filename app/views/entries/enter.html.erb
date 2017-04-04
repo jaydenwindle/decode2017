@@ -1,16 +1,72 @@
-<head>
-  <% content_for :title, "Enter Giveaway" %>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <link rel="stylesheet" href="/assets/entries.css">
-</head>
+<% content_for :title, "Enter Giveaway" %>
+<link rel="stylesheet" href="/assets/entries.scss">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-<header>
-  <div class = "container-fluid">
-    <div class "row">
-      <div class "col-8">
-        <h4>Welcome to the "<%= @giveaway.name %>"</h4>
+
+<div class = "container-fluid" id ="header">
+  <div class "row">
+    <div class "text-center col-sm-5">
+      <div class="col-sm-12 text-center">
+        <h1>Welcome to the "<%= @giveaway.name %>"</h1>
       </div>
-</header>
+    </div>
+  </div>
+</div>
+
+
+
+<section id = "signup">
+  <div class="container" id="form">
+
+    <section id = "description">
+      <div class="container-fluid">
+        <div class="row text-center mb-5">
+          <div class="col-10 offset-1 text-center">
+            <h4> <%= @giveaway.description %> </h4>
+          </div>
+      </div>
+    </section>
+
+    <section id = "display">
+      <div class="w-100 mt-5 mb-5">
+        <% @giveaway.products.each do |product| %>
+          <div id="prodPhoto" class="cardish" style="width: <%= 100 / @giveaway.products.length %>%; background-image: url(<%= product.image_url %>); ">
+            <div class="overlay w-100 h-100 text-center">
+              <p class="title"><%= product.name %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </section>
+
+    <div class="row mb-5">
+      <div class="col-10 offset-1 text-center">
+        <h2>Now get ready to win some awesome stuff</h2>
+      </div>
+    </div>
+
+    <div class="row pb-5">
+      <div class="col-6 offset-3">
+        <%= form_for :user, url: enter_giveaway_path do |f| %>
+          <div class="form-group row">
+              <%= f.text_field :name, :class => "form-control col-12", :placeholder => "Full Name" %>
+          </div>
+          <div class="form-group row mt-3 mb-3">
+            <%= f.text_field :email, :class => "form-control col-12", :placeholder => "Email Address" %>
+          </div>
+          <div class="form-group row">
+            <div class="col-12 text-center">
+                <%= f.submit :class => "btn btn-md btn-primary"%>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
 
 <!-- <div class="container">
   <div class="row">
@@ -18,7 +74,7 @@
       <h1>Welcome to the "<%= @giveaway.name %>" giveaway!</h1>
     </div>
   </div>
-</div> -->
+</div>
 
 <section id = "description">
   <div class="container-fluid">
@@ -32,7 +88,7 @@
 <section id = "display">
   <div class="w-100 mt-5 mb-5">
     <% @giveaway.products.each do |product| %>
-      <!-- <% puts product.image_url %> -->
+      <!-- <% puts product.image_url %>
       <div class="cardish" style="width: <%= 100 / @giveaway.products.length %>%; background-image: url(<%= product.image_url %>); ">
         <div class="overlay w-100 h-100 text-center">
           <p class="title"><%= product.name %></p>
@@ -69,4 +125,4 @@
 
 <footer class="w-100 p-3 text-center">
   <p class="secret">*No Tesla Model S actually given out. Ha.</p>
-</footer>
+</footer> -->
