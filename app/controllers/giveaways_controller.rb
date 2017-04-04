@@ -53,13 +53,15 @@ class GiveawaysController < ShopifyApp::AuthenticatedController
     end
 
     def show
-        p params
         @giveaway = Giveaway.find(params[:id])
         if !@giveaway.isActive
             @giveaway.winners.each do |winner|
                 prod_name = ShopifyAPI::Product.find(winner.item_won).title
                 winner.item_won = prod_name
             end
+            render "winners"
+        else
+            render "show"
         end
     end
 
@@ -107,8 +109,7 @@ class GiveawaysController < ShopifyApp::AuthenticatedController
       giveaway = Giveaway.find(params[:id])
 
       giveaway.choose_winners
-      giveaway.isActive = false
-      giveaway.save
+      giveaway.update(:isActive => true)
 
       redirect_to giveaway_path(params[:id])
     end

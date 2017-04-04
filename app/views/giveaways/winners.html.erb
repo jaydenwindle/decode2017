@@ -2,7 +2,7 @@
     <script>
       ShopifyApp.ready(function () {
           ShopifyApp.Bar.initialize({
-              title: <%= @giveaway.name %> - Details,
+              title: <%= @giveaway.name %> - Winners,
               buttons: {
                 primary: {
                   label: 'Go Back',
@@ -18,30 +18,28 @@
     <div class="row">
         <div class="xs-12">
 
-            <h2>Participants</h2>
+            <h2>Winners</h2>
             <br />
-            <% if @giveaway.users.length == 0 %>
             <table class="table table-bordered table-responsive" style="width: 100%;">
                 <thead>
                     <tr>
                     <th>Name</th>
                     <th>Email</th>
+                    <th>Product</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <% @giveaway.users.each do |user| %>
+                    <% @giveaway.winners.each do |user| %>
                     <tr>
                         <td><%= user.name %></td>
                         <td><%= user.email %></td>
+                        <td><%= user.item_won %></td>
                     </tr>
                     <% end %>
                 <tr>
                 </tbody>
             </table>
-            <% else %>
-                <h4>No participants signed up yet!</h4>
-            <% end %>
-
+                    
         </div>
     </div>
 </div>

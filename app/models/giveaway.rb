@@ -5,7 +5,6 @@ class Giveaway < ApplicationRecord
   
     def choose_winners   
       all_applicants = users.to_a.shuffle
-      p all_applicants
       
       products.each do |product|
         product[:quantity].times do
