@@ -29,13 +29,19 @@
 
     <section id = "display">
       <div class="w-100 mt-5 mb-5">
-        <% @giveaway.products.each do |product| %>
-          <div id="prodPhoto" class="cardish" style="width: <%= 100 / @giveaway.products.length %>%; background-image: url(<%= product.image_url %>); ">
-            <div class="overlay w-100 h-100 text-center">
-              <p class="title"><%= product.name %></p>
+        <div class = "container-fluid">
+          <div class="row">
+            <% @giveaway.products.each do |product| %>
+            <div class = "col-12">
+              <div class="cardish" style="width: <%= 100 %>%; background-image: url(<%= product.image_url %>); ">
+                <div class="overlay w-100 h-100 text-center">
+                  <p class="title"><%= product.name %></p>
+                </div>
+              </div>
             </div>
+            <% end %>
           </div>
-        <% end %>
+        </div>
       </div>
     </section>
 
