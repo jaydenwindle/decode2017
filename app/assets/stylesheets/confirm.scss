@@ -1,158 +1,194 @@
-html, body {
+body,
+html {
     max-width: 100%;
     overflow-x: hidden;
 }
 @media (max-width: 576px) {
-  #confirm-header{
-    background-color: #388E3C;
-    height:146px;
-    width:100%;
-  }
-  #confirm-signup{
-    background-color: white;
-    height:100%;
-    box-shadow: 0px 5px 50px #2d2e30;
-  }
-  #confim{
-  }
-  h1,h2,h3,h4 {
-    padding-top: 20px;
-    font-weight: 300;
-    -webkit-font-smoothing: antialiased;
-  	text-rendering: optimizelegibility;
-  }
-  html, body {
-      max-width: 100%;
-      overflow-x: hidden;
-  }
+    #confirm-header {
+        background-color: #388E3C;
+        height: 146px;
+        width: 100%;
+    }
+
+    #confirm-signup {
+        background-color: white;
+        height: 100%;
+        position: absolute;
+        box-shadow: 0 5px 50px #2d2e30;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        padding-top: 20px;
+        font-weight: 300;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizelegibility;
+    }
+
+    body,
+    html {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
 }
 // Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-  #confirm-header{
-    background-color: #388E3C;
-    height:102px;
-    width:100%;
-  }
-  #confirm-signup{
-    background-color: #4CAF50;
-    height:100%;
-    width:100%;
-  }
-  #confirm{
-    width:100%;
-    background-color:white;
-    height:500px;
-    margin-top: -20px;
-    position:fixed;
-    box-shadow: 0px 5px 50px #2d2e30;
-  }
-  h1,h2,h3,h4 {
-    padding-top: 20px;
-    font-weight: 300;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizelegibility;
-  }
-  html, body {
-      max-width: 100%;
-      overflow-x: hidden;
-  }
-}
+@media (min-width: 576px) and (max-width: 767px) {
+    #confirm-header {
+        background-color: #388E3C;
+        height: 102px;
+        width: 100%;
+    }
 
+    #confirm-signup {
+        background-color: #4CAF50;
+        height: 100%;
+        width: 100%;
+    }
+
+    #confirm {
+        width: 100%;
+        background-color: white;
+        height: 500px;
+        margin-top: -20px;
+        position: fixed;
+        box-shadow: 0 5px 50px #2d2e30;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        padding-top: 20px;
+        font-weight: 300;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizelegibility;
+    }
+
+    body,
+    html {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+}
 // Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-  #confirm-header{
-    background-color: #388E3C;
-    height:102px;
-    width:100%;
-  }
-  #confirm-signup{
-    background-color: #4CAF50;
-    height:100%;
-    width:100%;
-  }
-  #confirm{
-    margin-left: 13%;
-    width:600px;
-    background-color:white;
-    height:500px;
-    margin-top: -20px;
-    position:fixed;
-    box-shadow: 0px 5px 50px #2d2e30;
-  }
-  h1,h2,h3,h4 {
-    padding-top: 20px;
-    font-weight: 300;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizelegibility;
-  }
-  html, body {
-      max-width: 100%;
-      overflow-x: hidden;
-  }
-}
+@media (min-width: 768px) and (max-width: 991px) {
+    #confirm-header {
+        background-color: #388E3C;
+        height: 102px;
+        width: 100%;
+    }
 
+    #confirm-signup {
+        background-color: #4CAF50;
+        height: 100%;
+        width: 100%;
+    }
+
+    #confirm {
+        margin-left: 13%;
+        width: 600px;
+        background-color: white;
+        height: 500px;
+        margin-top: -20px;
+        position: fixed;
+        box-shadow: 0 5px 50px #2d2e30;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        padding-top: 20px;
+        font-weight: 300;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizelegibility;
+    }
+
+    body,
+    html {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+}
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
-  #confirm-header{
-    background-color: #388E3C;
-    height:102px;
-    width:100%;
-  }
-  #confirm-signup{
-    background-color: #4CAF50;
-    height:100%;
-    width:100%;
-  }
-  #confirm{
-    margin-left: 200px;
-    width:600px;
-    background-color:white;
-    height:500px;
-    margin-top: -20px;
-    position:fixed;
-    box-shadow: 0px 5px 50px #2d2e30;
-  }
-  h1,h2,h3,h4 {
-    padding-top: 20px;
-    font-weight: 300;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizelegibility;
-  }
-  html, body {
-      max-width: 100%;
-      overflow-x: hidden;
-  }
-}
+    #confirm-header {
+        background-color: #388E3C;
+        height: 102px;
+        width: 100%;
+    }
 
+    #confirm-signup {
+        background-color: #4CAF50;
+        height: 100%;
+        width: 100%;
+    }
+
+    #confirm {
+        margin-left: 200px;
+        width: 600px;
+        background-color: white;
+        height: 500px;
+        margin-top: -20px;
+        position: fixed;
+        box-shadow: 0 5px 50px #2d2e30;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        padding-top: 20px;
+        font-weight: 300;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizelegibility;
+    }
+
+    body,
+    html {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+}
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
-  #confirm-header{
-    background-color: #388E3C;
-    height:102px;
-    width:100%;
-  }
-  #confirm-signup{
-    background-color: #4CAF50;
-    height:100%;
-    width:100%;
-  }
-  #confirm{
-    margin-left: 340px;
-    width:600px;
-    background-color:white;
-    height:100%;
-    margin-top: -20px;
-    position:fixed;
-    box-shadow: 0px 5px 50px #2d2e30;
-  }
-  h1,h2,h3,h4 {
-    padding-top: 20px;
-    font-weight: 300;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizelegibility;
-  }
-  html, body {
-      max-width: 100%;
-      overflow-x: hidden;
-  }
+    #confirm-header {
+        background-color: #388E3C;
+        height: 102px;
+        width: 100%;
+    }
+
+    #confirm-signup {
+        background-color: #4CAF50;
+        height: 100%;
+        width: 100%;
+    }
+
+    #confirm {
+        margin-left: 340px;
+        width: 600px;
+        background-color: white;
+        height: 100%;
+        margin-top: -20px;
+        position: fixed;
+        box-shadow: 0 5px 50px #2d2e30;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        padding-top: 20px;
+        font-weight: 300;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizelegibility;
+    }
+
+    body,
+    html {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
 }
