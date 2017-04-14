@@ -34,8 +34,8 @@ When adding features or content, please always follow this workflow:
  2. **Create a PR as soon as you have code ready.** The existence of the PR shows that work
  is being done on the issue and also provides all contributors and viewers with status updates
  regarding the issue - rather than each contributor having to subscribe to separate branches
- and forks. The PR template includes a section on PR status - use it to signify whether or not
- your PR needs to be pulled yet. Keep that section up-to-date as you work.
+ and forks. There are labels to indicate whether the status of a PR - use them to signify
+ whether or not your PR needs to be merged yet. Keep these up-to-date as you work.
  3. **Follow the style guides.** For different code changes, there are different style guides
  that we try to stick to. To see a complete list, checkout the section [Style Guides](#style-guides).
  4. **Internal use: never merge your own PR.** This really only applies to official collaborators of
