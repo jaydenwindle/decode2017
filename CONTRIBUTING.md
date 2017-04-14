@@ -8,7 +8,7 @@ the major collaborators of the project!
 ## Table of Contents
 
  - [Style Guides](#style-guides)
- - [Adding Features or Content](#adding-features-or-content)
+ - [Pull Requests](#pull-requests)
  - [Naming Branches](#naming-branches)
  - [Modification of Dependencies](#modification-of-dependencies)
    - [Modifying Ruby dependencies](#modifying-ruby-dependencies)
@@ -20,7 +20,7 @@ The basic style guide to follow for your HTML &amp; CSS is [codeguide.co](http:/
 
 Any additional style guides listed in this section should be seen as overriding to this style guide.
 
-## Adding Features or Content
+## Pull Requests
 
 When adding features or content, please always follow this workflow:
 
@@ -38,7 +38,11 @@ When adding features or content, please always follow this workflow:
  whether or not your PR needs to be merged yet. Keep these up-to-date as you work.
  3. **Follow the style guides.** For different code changes, there are different style guides
  that we try to stick to. To see a complete list, checkout the section [Style Guides](#style-guides).
- 4. **Internal use: never merge your own PR.** This really only applies to official collaborators of
+ 4. **Don't squash your commits.** When you're working on your PR, don't worry about squashing - a
+ list of commits is helpful for rollbacks and things like that. But when PRs are merged, we will be
+ using Github's "Squash & Merge" feature to ensure that your PR is squashed at the last possible
+ moment.
+ 5. **Internal use: never merge your own PR.** This really only applies to official collaborators of
  the project, but please do not ever merge a PR that you opened. Assign a reviewer and await approval
  for your PR. After approval, still do NOT merge your own PR - let the reviewer do it.
 
