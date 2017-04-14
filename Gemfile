@@ -15,6 +15,8 @@ gem 'httparty'
 
 # Yes, it's alpha. It's nice. Go away.
 gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'sprockets'
+gem 'sprockets-es6'
 gem 'autoprefixer-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
