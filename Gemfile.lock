@@ -216,6 +216,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeresource!
+  autoprefixer-rails
   bootstrap (~> 4.0.0.alpha6)
   byebug
   coffee-rails (~> 4.2)
