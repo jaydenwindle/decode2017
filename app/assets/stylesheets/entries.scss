@@ -15,35 +15,35 @@ html {
     }
     padding-top: 1.563rem;
     background-color: #388E3C;
-    padding-bottom: 10px;
+    padding-bottom: 0.625rem;
     color: #FFFFFF;
     border-color: #BDBDBD;
-    box-shadow: 5px 5px 5px #2d2e30;
+    box-shadow: 0.3125rem 0.3125rem 0.3125rem #2d2e30;
 
     h1 {
-        padding-bottom: 15px;
+        padding-bottom: 0.9375rem;
     }
 }
 
 #description {
-    padding-top: 10px;
+    padding-top: 0.625rem;
     border-color: #BDBDBD;
 
     h4 {
-        padding-bottom: 15px;
+        padding-bottom: 0.9375rem;
     }
 }
 
 #display {
-    margin-top: -50px;
+    margin-top: -3.125rem;
 
     .row {
-        margin-left: -30px;
-        margin-right: -30.9px;
+        margin-left: -1.875rem;
+        margin-right: -1.875rem;
     }
 
     .col-12 {
-        margin-bottom: -7px;
+        margin-bottom: -0.4375rem;
     }
 }
 
@@ -67,9 +67,9 @@ html {
             height: 100%;
             width: 100%;
             margin-left: 0;
-            box-shadow: 3px 3px 15px #5a5c60;
+            box-shadow: 0.1875rem 0.1875rem 0.9375rem #5a5c60;
         }
-        box-shadow: 3px 3px 15px #5a5c60;
+        box-shadow: 0.1875rem 0.1875rem 0.9375rem #5a5c60;
         background-color: #FFFFFF;
         height: 100%;
         width: 70%;
@@ -81,7 +81,7 @@ html {
 
 .cardish {
     display: inline-block;
-    height: 400px;
+    height: 25rem;
     width: 33.3333333%;
     background-size: cover;
     background-position: center center;
