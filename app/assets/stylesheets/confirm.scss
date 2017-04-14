@@ -3,7 +3,7 @@ html {
     max-width: 100%;
     overflow-x: hidden;
 }
-@media (max-width: 576px) {
+@media (max-width: 36rem) {
     #confirm-header {
         background-color: #388E3C;
         height: 9.125rem;
@@ -34,7 +34,7 @@ html {
     }
 }
 // Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) and (max-width: 767px) {
+@media (min-width: 36rem) and (max-width: 47.94rem) {
     #confirm-header {
         background-color: #388E3C;
         height: 6.375rem;
@@ -72,7 +72,7 @@ html {
     }
 }
 // Medium devices (tablets, 768px and up)
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 48rem) and (max-width: 61.94rem) {
     #confirm-header {
         background-color: #388E3C;
         height: 6.375rem;
@@ -109,7 +109,7 @@ html {
     }
 }
 // Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
+@media (min-width: 62rem) {
     #confirm-header {
         background-color: #388E3C;
         height: 6.375rem;
@@ -146,7 +146,7 @@ html {
     }
 }
 // Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
+@media (min-width: 75rem) {
     #confirm-header {
         background-color: #388E3C;
         height: 6.375rem;
