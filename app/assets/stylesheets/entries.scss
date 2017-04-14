@@ -5,15 +5,15 @@ html {
 }
 
 #header {
-    @media (max-width: 575px) {
+    @media (max-width: 35.94rem) {
         background-color: #388E3C;
-        padding-right: 15px;
+        padding-right: 0.9375rem;
         width: 100%;
         color: #FFFFFF;
         border-color: #BDBDBD;
-        box-shadow: 5px 5px 5px #2d2e30;
+        box-shadow: 0.3125rem 0.3125rem 0.3125rem #2d2e30;
     }
-    padding-top: 25px;
+    padding-top: 1.563rem;
     background-color: #388E3C;
     padding-bottom: 10px;
     color: #FFFFFF;
