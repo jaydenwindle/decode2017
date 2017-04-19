@@ -1,6 +1,5 @@
 class Giveaway < ApplicationRecord
     has_many :users
-    has_many :winners, :class_name => "User" 
     has_many :products
   
     def choose_winners   
@@ -13,10 +12,14 @@ class Giveaway < ApplicationRecord
                 return 
             else
                 w.item_won = product[:prod_id]
-                winners << w
+                w.save
             end
         end
       end
+    end
+
+    def winners 
+        users.where("item_won <> ''")
     end
 
     def get_coupon_code(quantity, product_id)
