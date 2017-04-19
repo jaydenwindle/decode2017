@@ -55,10 +55,6 @@ class GiveawaysController < ShopifyApp::AuthenticatedController
     def show
         @giveaway = Giveaway.find(params[:id])
         if !@giveaway.isActive
-            @giveaway.winners.each do |winner|
-                prod_name = ShopifyAPI::Product.find(winner.item_won).title
-                winner.item_won = prod_name
-            end
             render "winners"
         else
             render "show"
