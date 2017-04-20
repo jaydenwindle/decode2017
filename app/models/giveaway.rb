@@ -8,12 +8,11 @@ class Giveaway < ApplicationRecord
       products.each do |product|
         product[:quantity].times do
             w = all_applicants.pop
-            if !w 
-                return 
-            else
-                w.item_won = product[:prod_id]
-                w.save
-            end
+
+            return unless w
+
+            w.item_won = product[:prod_id]
+            w.save
         end
       end
     end
