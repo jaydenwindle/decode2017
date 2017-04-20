@@ -1,113 +1,20 @@
-body,
-html {
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-#header {
-    @media (max-width: 35.94rem) {
-        background-color: #388E3C;
-        padding-right: 0.9375rem;
-        width: 100%;
-        color: #FFFFFF;
-        border-color: #BDBDBD;
-        box-shadow: 0.3125rem 0.3125rem 0.3125rem #2d2e30;
-    }
-    padding-top: 1.563rem;
-    background-color: #388E3C;
-    padding-bottom: 0.625rem;
-    color: #FFFFFF;
-    border-color: #BDBDBD;
-    box-shadow: 0.3125rem 0.3125rem 0.3125rem #2d2e30;
-
-    h1 {
-        padding-bottom: 0.9375rem;
-    }
-}
-
-#description {
-    padding-top: 0.625rem;
-    border-color: #BDBDBD;
-
-    h4 {
-        padding-bottom: 0.9375rem;
-    }
-}
-
-#display {
-    margin-top: -3.125rem;
-
-    .row {
-        margin-left: -1.875rem;
-        margin-right: -1.875rem;
-    }
-
-    .col-12 {
-        margin-bottom: -0.4375rem;
-    }
-}
-
-#signup {
-    border-color: #BDBDBD;
-    background-color: #4CAF50;
-    background-size: cover;
-    height: 100%;
-    position: relative;
-    display: table;
-    width: 100%;
-    vertical-align: top;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    text-rendering: optimizelegibility;
-
-    #form {
-        @media (max-width: 35.94rem) {
-            background-color: #FFFFFF;
-            height: 100%;
-            width: 100%;
-            margin-left: 0;
-            box-shadow: 0.1875rem 0.1875rem 0.9375rem #5a5c60;
-        }
-        box-shadow: 0.1875rem 0.1875rem 0.9375rem #5a5c60;
-        background-color: #FFFFFF;
-        height: 100%;
-        width: 70%;
-        margin-left: 14.5%;
-        vertical-align: top;
-        padding: 0;
-    }
-}
-
 .cardish {
-    display: inline-block;
-    height: 25rem;
-    width: 33.3333333%;
-    background-size: cover;
-    background-position: center center;
+  display: inline-block;
+  height: 400px;
 
-    .overlay {
-        background: rgba(0,0,0,.4);
-        display: table;
-
-        p {
-            display: table-cell;
-            vertical-align: middle;
-            color: #fff;
-            text-transform: uppercase;
-        }
-    }
+  background-size: cover;
+  background-position: center center;
 }
 
-footer > p {
-    font-size: 0.3rem;
+.cardish > .overlay {
+  background: rgba(0,0,0,.4);
+  display: table;
 }
 
-h1,
-h2,
-h3,
-h4 {
-    font-weight: 300;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizelegibility;
+.cardish > .overlay p {
+  display: table-cell;
+  vertical-align: middle;
+
+  color: #fff;
+  text-transform: uppercase;
 }
