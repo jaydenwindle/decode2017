@@ -3,10 +3,10 @@ html {
     max-width: 100%;
     overflow-x: hidden;
 }
-@media (max-width: 576px) {
+@media (max-width: 36rem) {
     #confirm-header {
         background-color: #388E3C;
-        height: 146px;
+        height: 9.125rem;
         width: 100%;
     }
 
@@ -14,14 +14,14 @@ html {
         background-color: white;
         height: 100%;
         position: absolute;
-        box-shadow: 0 5px 50px #2d2e30;
+        box-shadow: 0 0.3125rem 3.125rem #2d2e30;
     }
 
     h1,
     h2,
     h3,
     h4 {
-        padding-top: 20px;
+        padding-top: 1.25rem;
         font-weight: 300;
         -webkit-font-smoothing: antialiased;
         text-rendering: optimizelegibility;
@@ -34,10 +34,10 @@ html {
     }
 }
 // Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) and (max-width: 767px) {
+@media (min-width: 36rem) and (max-width: 47.94rem) {
     #confirm-header {
         background-color: #388E3C;
-        height: 102px;
+        height: 6.375rem;
         width: 100%;
     }
 
@@ -50,16 +50,16 @@ html {
     #confirm {
         width: 100%;
         background-color: white;
-        height: 500px;
-        margin-top: -20px;
-        box-shadow: 0 5px 50px #2d2e30;
+        height: 31.25rem;
+        margin-top: -1.25rem;
+        box-shadow: 0 0.3125rem 3.125rem #2d2e30;
     }
 
     h1,
     h2,
     h3,
     h4 {
-        padding-top: 20px;
+        padding-top: 1.25rem;
         font-weight: 300;
         -webkit-font-smoothing: antialiased;
         text-rendering: optimizelegibility;
@@ -72,10 +72,10 @@ html {
     }
 }
 // Medium devices (tablets, 768px and up)
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 48rem) and (max-width: 61.94rem) {
     #confirm-header {
         background-color: #388E3C;
-        height: 102px;
+        height: 6.375rem;
         width: 100%;
     }
 
@@ -87,16 +87,16 @@ html {
 
     #confirm {
         background-color: white;
-        height: 500px;
-        margin-top: -20px;
-        box-shadow: 0 5px 50px #2d2e30;
+        height: 31.25rem;
+        margin-top: -1.25rem;
+        box-shadow: 0 0.3125rem 3.125rem #2d2e30;
     }
 
     h1,
     h2,
     h3,
     h4 {
-        padding-top: 20px;
+        padding-top: 1.25rem;
         font-weight: 300;
         -webkit-font-smoothing: antialiased;
         text-rendering: optimizelegibility;
@@ -109,10 +109,10 @@ html {
     }
 }
 // Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
+@media (min-width: 62rem) {
     #confirm-header {
         background-color: #388E3C;
-        height: 102px;
+        height: 6.375rem;
         width: 100%;
     }
 
@@ -124,16 +124,16 @@ html {
 
     #confirm {
         background-color: white;
-        height: 500px;
-        margin-top: -20px;
-        box-shadow: 0 5px 50px #2d2e30;
+        height: 31.25rem;
+        margin-top: -1.25rem;
+        box-shadow: 0 0.3125rem 3.125rem #2d2e30;
     }
 
     h1,
     h2,
     h3,
     h4 {
-        padding-top: 20px;
+        padding-top: 1.25rem;
         font-weight: 300;
         -webkit-font-smoothing: antialiased;
         text-rendering: optimizelegibility;
@@ -146,10 +146,10 @@ html {
     }
 }
 // Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
+@media (min-width: 75rem) {
     #confirm-header {
         background-color: #388E3C;
-        height: 102px;
+        height: 6.375rem;
         width: 100%;
     }
 
@@ -162,15 +162,15 @@ html {
     #confirm {
         background-color: white;
         height: 100%;
-        margin-top: -20px;
-        box-shadow: 0 5px 50px #2d2e30;
+        margin-top: -1.25rem;
+        box-shadow: 0 0.3125rem 3.125rem #2d2e30;
     }
 
     h1,
     h2,
     h3,
     h4 {
-        padding-top: 20px;
+        padding-top: 1.25rem;
         font-weight: 300;
         -webkit-font-smoothing: antialiased;
         text-rendering: optimizelegibility;
