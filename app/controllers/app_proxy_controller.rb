@@ -8,7 +8,7 @@ class AppProxyController < ApplicationController
   def enter
       @giveaway = Giveaway.find_by_id(params[:id])
 
-      return unless @giveaway # TODO: check to make sure giveaway belongs to current store
+      redirect_to "/" and return unless @giveaway # TODO: check to make sure giveaway belongs to current store
 
       render layout: false, content_type: 'application/liquid'
   end
