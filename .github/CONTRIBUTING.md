@@ -52,11 +52,21 @@ For collaborators, this is a set of rules for branch naming that we follow.
 
 For contributors, this is a good way to know what is/isn't being worked on.
 
- - `master`: the current stable (deployed) version of the code.
- - `development`: active branch that all PRs get merged into - this will always be the next release.
+ - `master`: active branch that all PRs get merged into - the latest commit will not necessarily be stable. To checkout a stable
+ version of master, checkout a tagged commit.
  - `fix_n`: a branch where issue `n` is being fixed.
 
-Code cycle: `fix_n` => `development` => `master`
+Code cycle: `fix_n` => `master` => `master#vXX.XX.XX`
+
+## Versioning
+
+Versioning is handled through tagged commits as opposed to separate branches for now.
+
+ - Release versions will follow [semver](http://semver.org/).
+ - Once a release occurs, that release will no longer be actively maintained and
+ you must update to the next patch release for bug fixes.
+ - All versions past 1.0 are considered stable.
+ - The latest tagged release will also be the deployed release.
 
 ## Modification of Dependencies
 
