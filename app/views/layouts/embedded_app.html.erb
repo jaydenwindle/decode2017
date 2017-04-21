@@ -38,6 +38,7 @@
     </script>
 
     <%= javascript_include_tag 'application', "data-turbolinks-track" => true %>
+    <%= javascript_include_tag controller_name + "/" + action_name if File.exists?("#{Rails.root}/app/assets/javascripts/#{controller_name}/#{action_name}.js") %>
 
     <% if content_for?(:javascript) %>
       <div id="ContentForJavascript" data-turbolinks-temporary>

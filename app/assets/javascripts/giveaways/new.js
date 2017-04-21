@@ -109,7 +109,7 @@
   // asyncify shopify
   ShopifyApp.ready(function () {
     // init the app (if not embeded)
-    if ( !document.getElementById('dash-script').getAttribute('data-embed') ) {
+    if ( !document.getElementById('giveaways-new').getAttribute('data-embed') ) {
       ShopifyApp.Bar.initialize(CONFIG)
     }
 
@@ -144,4 +144,3 @@
     }
   }
 })
-;

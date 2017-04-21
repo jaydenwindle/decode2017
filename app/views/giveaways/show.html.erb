@@ -2,14 +2,14 @@
     <script>
       ShopifyApp.ready(function () {
           ShopifyApp.Bar.initialize({
-              title: <%= @giveaway.name %> - Details,
+              title: "<%= @giveaway.name %> - Details",
               buttons: {
                 primary: {
                   label: 'Go Back',
                   href: '/'
                 }
               }
-          });
+          })
       })
     </script>
 <% end %>
