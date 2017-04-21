@@ -1,0 +1,31 @@
+<script>
+    //TODO: make form do ajax submit
+</script>
+
+<div class="grid">
+    <div class="grid__item medium-up--one-third medium-up--push-one-third">
+        <div class="section-header text-center">
+            <h1>Enter the "<%= @giveaway.name %>" giveaway</h1>
+        </div>
+
+
+        <div class="rte">
+            <%= @giveaway.description %>
+        </div>
+
+
+        <div class="form-vertical">
+            <form action="" id="giveaway-<%= params[:id] %>-form">
+
+                <label for="GiveawayName">Name</label>
+                <input type="text" id="GiveawayName" placeholder="Your Name">
+
+                <label for="GiveawayEmail">Email</label>
+                <input type="email" id="GiveawayEmail" placeholder="Your Email">
+
+                <input type="submit" class="btn" value="Enter Giveaway">
+
+            </form>
+        </div>
+    </div>
+</div>
