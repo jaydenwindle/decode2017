@@ -19,6 +19,10 @@ rake db:migrate
 bin/rails server
 ```
 
+## Support
+
+Our supported browsers list is always changing but to see the list that we actively support, click [here](http://browserl.ist/?q=last+1+version%2C+ie+%3E%3D+10).
+
 ## Demo video
 Check out the live giveaway we did to demo our work at deCode!
 [![Giveaway app demo](https://img.youtube.com/vi/W6xD4u978WU/0.jpg)](https://www.youtube.com/watch?v=W6xD4u978WU)

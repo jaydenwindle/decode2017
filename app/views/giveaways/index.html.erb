@@ -3,6 +3,9 @@
     <% javascript_include_tag 'giveaways/new', :id => 'giveaways-new', :'data-embed' => !@giveaways.any? %>
   <% end %>
 <% end %>
+<% content_for :css do %>
+  <link rel="stylesheet" href="/assets/giveaways.css">
+<% end %>
 
 <div class="centerify">
   <div>
