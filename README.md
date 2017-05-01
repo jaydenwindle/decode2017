@@ -12,6 +12,11 @@ gem install rails bundler
 git clone https://github.com/jaydenwindle/decode2017.git && cd decode2017
 bundle install
 
+# setup locally (create a .env file in root folder)
+# have these two lines inside
+SHOPIFY_API_KEY=[YOUR_SHOPIFY_API_KEY_HERE]
+SHOPIFY_API_SECRET=[YOUR_SHOPIFY_SECRET_KEY_HERE]
+
 # Migrate the db
 rake db:migrate
 
